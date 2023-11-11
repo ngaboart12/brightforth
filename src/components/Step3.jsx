@@ -240,7 +240,6 @@ const Step3 = () => {
           <Input placeholder="Relationship" label="Relationship" type="text" />
           <Input placeholder="Enter Contact" label="Contact" type="text" />
           <Input placeholder="Enter Email" label="Email" type="text" />
-          <Input placeholder="Enter Email" label="Email" type="text" />
         </div>
       </div>
     </div>

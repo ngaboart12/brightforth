@@ -251,11 +251,6 @@ const Step4 = () => {
             type="text"
           />
           <Input placeholder="Yes/No" label="Primary Language" type="text" />
-          <Input
-            placeholder="Enter Graduation date"
-            label="Graduation date"
-            type="text"
-          />
         </div>
       </div>
     </div>

@@ -2,15 +2,6 @@ import React, { useEffect, useState } from "react";
 import Input from "./Input";
 
 const Step1 = ({ formData, handleInputChange }) => {
-  const [firstName, setFirstName] = useState();
-  const [middelName, setMiddelName] = useState();
-  const [lastName, setLastName] = useState();
-  const [dateOfBirth, setDateOfBirth] = useState();
-  const [placeOfBirth, setPlaceOfBirth] = useState();
-  const [nationality, setNationality] = useState();
-  const [sex, setSex] = useState();
-  const [contactNumber, setContactNumber] = useState();
-  const [firstLanguage, setFirstLanguage] = useState();
   const [countryName, setCountryName] = useState("");
   const [allCountries, setAllCountries] = useState([]);
 
@@ -255,31 +246,41 @@ const Step1 = ({ formData, handleInputChange }) => {
             placeholder="Enter Middel name"
             label="Middel name"
             type="text"
-            onChange={(e) => setMiddelName(e.target.value)}
+            value={formData.stage1.middelName}
+            onChange={(e) =>
+              handleInputChange("stage1", "middelName", e.target.value)
+            }
           />
           <Input
             placeholder="Enter Last name"
             label="Last name"
             type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            value={formData.stage1.lastName}
+            onChange={(e) =>
+              handleInputChange("stage1", "lastName", e.target.value)
+            }
           />
           <Input
             placeholder="Date of Birth"
             label="Date of birth"
             type="date"
-            value={dateOfBirth}
-            onChange={(e) => setDateOfBirth(e.target.value)}
+            value={formData.stage1.dateOfBirth}
+            onChange={(e) =>
+              handleInputChange("stage1", "dateOfBirth", e.target.value)
+            }
           />
-
           <div className="flex flex-col  gap-1 text-black">
             <span>Place of Birth</span>
             <select
               className="border py-3 rounded-md px-4 outline-none text-[#07294D]"
-              value={countryName}
-              onChange={(e) => setPlaceOfBirth(e.target.value)}
+              value={formData.stage1.placeOfBirth}
+              onChange={(e) =>
+                handleInputChange("stage1", "placeOfBirth", e.target.value)
+              }
             >
-              <option value="">Select a country</option>
+              <option value="" disabled>
+                Select a country
+              </option>
               {allCountries.map((country) => (
                 <option key={country.name.common} value={country.name.common}>
                   {country.name.common}
@@ -287,14 +288,17 @@ const Step1 = ({ formData, handleInputChange }) => {
               ))}
             </select>
           </div>
+
           <Input
             placeholder="Select nationality"
             label="Nationality"
-            value={nationality}
-            onChange={(e) => setNationality(e.target.value)}
+            value={formData.stage1.nationality}
+            onChange={(e) =>
+              handleInputChange("stage1", "nationality", e.target.value)
+            }
           />
           <div className="flex flex-col  gap-1 text-black">
-            <span>Place of Birth</span>
+            <span>Gender</span>
             <div className="flex gap-2 w-full">
               <div className="flex gap-4 border px-6 py-3 rounded-md">
                 <input
@@ -302,7 +306,9 @@ const Step1 = ({ formData, handleInputChange }) => {
                   className="w-4"
                   name="sex"
                   value="Male"
-                  onChange={(e) => setSex(e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("stage1", "sex", e.target.value)
+                  }
                 />{" "}
                 <label htmlFor="">Male</label>
               </div>
@@ -312,23 +318,21 @@ const Step1 = ({ formData, handleInputChange }) => {
                   className="w-4"
                   name="sex"
                   value="Female"
-                  onChange={(e) => setSex(e.target.value)}
+                  onChange={(e) =>
+                    handleInputChange("stage1", "sex", e.target.value)
+                  }
                 />{" "}
-                <label htmlFor="">Male</label>
+                <label htmlFor="">Female</label>
               </div>
             </div>
           </div>
           <Input
-            placeholder="Enter your number"
-            label="Contact number"
-            value={contactNumber}
-            onChange={(e) => setContactNumber(e.target.value)}
-          />
-          <Input
             placeholder="Enter first language"
             label="First Language"
-            value={firstLanguage}
-            onChange={(e) => setFirstLanguage(e.target.value)}
+            value={formData.stage1.firstLaguage}
+            onChange={(e) =>
+              handleInputChange("stage1", "firstLaguage", e.target.value)
+            }
           />
         </div>
       </div>

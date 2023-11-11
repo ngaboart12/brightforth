@@ -6,12 +6,42 @@ import Step3 from "../components/Step3";
 import Step4 from "../components/Step4";
 import Step5 from "../components/Step5";
 
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase";
 const Apllication = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    stage1: { firstName: "", input2: "", input3: "" },
-    stage2: { input1: "", input5: "", input6: "" },
-    stage3: { input7: "", input8: "", input9: "" },
+    stage1: {
+      firstName: "",
+      middelName: "",
+      lastName: "",
+      dateOfBirth: "",
+      placeOfBirth: "",
+      nationality: "",
+      sex: "",
+      firstLaguage: "",
+    },
+    stage2: {
+      passportNumber: "",
+      passportIssuedBy: "",
+      passportExpiryDate: "",
+      ValidTo: "",
+      country: "",
+      district: "",
+      streetNumber: "",
+      contactNumber: "",
+      email: "",
+    },
+    stage3: {
+      fatherName: "",
+      fatherContact: "",
+      motherName: "",
+      motherContact: "",
+      emrgencyName: "",
+      relationship: "",
+      emargencyContact: "",
+      emrgencyEmail: "",
+    },
   });
   const handleInputChange = (stage, inputName, value) => {
     setFormData((prevData) => ({
@@ -23,10 +53,14 @@ const Apllication = () => {
     }));
   };
 
-  const handelSubmit = (e) => {
+  const handelSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData.stage1.firstName);
-    console.log(formData.stage2.input1);
+    try {
+      const docRef = await addDoc(collection(db, "formData"), formData);
+      console.log("Document written with ID:", docRef.id);
+    } catch (error) {
+      console.error("Error adding document:", error);
+    }
   };
 
   const handleNext = () => {
@@ -56,9 +90,15 @@ const Apllication = () => {
         {step === 2 && (
           <Step2 formData={formData} handleInputChange={handleInputChange} />
         )}
-        {step === 3 && <Step3 />}
-        {step === 4 && <Step4 />}
-        {step === 5 && <Step5 />}
+        {step === 3 && (
+          <Step3 formData={formData} handleInputChange={handleInputChange} />
+        )}
+        {step === 4 && (
+          <Step4 formData={formData} handleInputChange={handleInputChange} />
+        )}
+        {step === 5 && (
+          <Step5 formData={formData} handleInputChange={handleInputChange} />
+        )}
         <div className="flex  gap-2  py-2 justify-end px-10">
           <div
             onClick={handlePrev}
