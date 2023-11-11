@@ -267,7 +267,7 @@ const Step4 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Select date"
             label="Attended  school to"
-            type="text"
+            type="date"
             value={formData.stage4.schoolTo}
             onChange={(e) =>
               handleInputChange("stage4", "schoolTo", e.target.value)
@@ -292,7 +292,11 @@ const Step4 = ({ formData, handleInputChange }) => {
                   name="fromschool"
                   value="Yes"
                   onChange={(e) =>
-                    handleInputChange("stage1", "sex", e.target.value)
+                    handleInputChange(
+                      "stage4",
+                      "IHaveFromThiSschool",
+                      e.target.value
+                    )
                   }
                 />{" "}
                 <label htmlFor="">Yes</label>
@@ -304,7 +308,11 @@ const Step4 = ({ formData, handleInputChange }) => {
                   name="fromschool"
                   value="No"
                   onChange={(e) =>
-                    handleInputChange("stage1", "sex", e.target.value)
+                    handleInputChange(
+                      "stage4",
+                      "IHaveFromThiSschool",
+                      e.target.value
+                    )
                   }
                 />{" "}
                 <label htmlFor="">No</label>

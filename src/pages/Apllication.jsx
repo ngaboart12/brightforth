@@ -92,43 +92,54 @@ const Apllication = () => {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
+    if (
+      filesImage.stage1.diploma !== "" &&
+      filesImage.stage1.passport &&
+      filesImage.stage1.transcript
+    ) {
+      try {
+        const diplomaStorageRef = ref(storage, "diplomas");
+        await uploadBytes(
+          diplomaStorageRef,
+          filesImage.stage1.diploma,
+          metadata
+        );
+        const diplomaUrl = await getDownloadURL(diplomaStorageRef);
+        // Upload passport file
+        const passportStorageRef = ref(storage, "passports");
+        await uploadBytes(
+          passportStorageRef,
+          filesImage.stage1.passport,
+          metadata
+        );
+        const passportUrl = await getDownloadURL(passportStorageRef);
 
-    try {
-      const diplomaStorageRef = ref(storage, "diplomas");
-      await uploadBytes(diplomaStorageRef, filesImage.stage1.diploma, metadata);
-      const diplomaUrl = await getDownloadURL(diplomaStorageRef);
-      // Upload passport file
-      const passportStorageRef = ref(storage, "passports");
-      await uploadBytes(
-        passportStorageRef,
-        filesImage.stage1.passport,
-        metadata
-      );
-      const passportUrl = await getDownloadURL(passportStorageRef);
+        const transcriptStorageRef = ref(storage, "transcripts");
+        await uploadBytes(
+          transcriptStorageRef,
+          filesImage.stage1.transcript,
+          metadata
+        );
+        const transcriptUrl = await getDownloadURL(transcriptStorageRef);
 
-      const transcriptStorageRef = ref(storage, "transcripts");
-      await uploadBytes(
-        transcriptStorageRef,
-        filesImage.stage1.transcript,
-        metadata
-      );
-      const transcriptUrl = await getDownloadURL(transcriptStorageRef);
+        setFormData((prevData) => ({
+          ...prevData,
+          stage5: {
+            diploma: diplomaUrl,
+            passport: passportUrl,
+            transcript: transcriptUrl,
+          },
+        }));
 
-      setFormData((prevData) => ({
-        ...prevData,
-        stage5: {
-          diploma: diplomaUrl,
-          passport: passportUrl,
-          transcript: transcriptUrl,
-        },
-      }));
-
-      if (diplomaUrl && passportUrl && transcriptUrl) {
-        const docRef = await addDoc(collection(db, "formData"), formData);
-        console.log("Document written with ID:", docRef.id);
+        if (diplomaUrl && passportUrl && transcriptUrl) {
+          const docRef = await addDoc(collection(db, "formData"), formData);
+          console.log("Document written with ID:", docRef.id);
+        }
+      } catch (error) {
+        console.error("Error adding document:", error);
       }
-    } catch (error) {
-      console.error("Error adding document:", error);
+    } else {
+      alert("all files are required");
     }
   };
   const handleDownload = (fileUrl, fileName) => {
@@ -140,8 +151,68 @@ const Apllication = () => {
     document.body.removeChild(link);
   };
   const handleNext = () => {
-    if (step < 5) {
-      setStep((prevStep) => prevStep + 1);
+    if (step == 1) {
+      if (
+        formData.stage1.firstName !== "" &&
+        formData.stage1.lastName !== "" &&
+        formData.stage1.dateOfBirth !== "" &&
+        formData.stage1.placeOfBirth !== "" &&
+        formData.stage1.nationality !== "" &&
+        formData.stage1.sex !== "" &&
+        formData.stage1.firstLaguage !== ""
+      ) {
+        setStep((prevStep) => prevStep + 1);
+      } else {
+        alert("all filed are required");
+      }
+    } else if (step == 2) {
+      if (
+        formData.stage2.passportNumber !== "" &&
+        formData.stage2.passportIssuedBy !== "" &&
+        formData.stage2.passportExpiryDate !== "" &&
+        formData.stage2.ValidTo !== "" &&
+        formData.stage2.country !== "" &&
+        formData.stage2.district !== "" &&
+        formData.stage2.streetNumber !== "" &&
+        formData.stage2.contactNumber !== "" &&
+        formData.stage2.email !== ""
+      ) {
+        setStep((prevStep) => prevStep + 1);
+      } else {
+        alert("all filed are required");
+      }
+    } else if (step == 3) {
+      if (
+        formData.stage3.fatherName !== "" &&
+        formData.stage3.fatherContact !== "" &&
+        formData.stage3.motherName !== "" &&
+        formData.stage3.motherContact !== "" &&
+        formData.stage3.emrgencyName !== "" &&
+        formData.stage3.relationship !== "" &&
+        formData.stage3.emargencyContact !== "" &&
+        formData.stage3.contactNumber !== "" &&
+        formData.stage3.emrgencyEmail !== ""
+      ) {
+        setStep((prevStep) => prevStep + 1);
+      } else {
+        alert("all filed are required");
+      }
+    } else if (step == 4) {
+      if (
+        formData.stage4.countryOfPrevSchool !== "" &&
+        formData.stage4.namePfPrevSchool !== "" &&
+        formData.stage4.levelOfEducation !== "" &&
+        formData.stage4.graduationDate !== "" &&
+        formData.stage4.primaryLaguage !== "" &&
+        formData.stage4.schoolFrom !== "" &&
+        formData.stage4.schoolTo !== "" &&
+        formData.stage4.degreeName !== "" &&
+        formData.stage4.IHaveFromThiSschool !== ""
+      ) {
+        setStep((prevStep) => prevStep + 1);
+      } else {
+        alert("all filed are required");
+      }
     }
   };
 
@@ -176,20 +247,32 @@ const Apllication = () => {
           <Step5 filesImage={filesImage} filesInputHandel={filesInputHandel} />
         )}
         <div className="flex  gap-2  py-2 justify-end px-10">
-          <div
-            onClick={handlePrev}
-            className="py-2 px-10 bg-gray-400 rounded-md"
-          >
-            cancel
-          </div>
-          <div
-            onClick={handleNext}
-            className="py-2 px-10 bg-[#FFCD21] rounded-md"
-          >
-            next
-          </div>
+          {step > 1 && (
+            <div
+              onClick={handlePrev}
+              className="py-2 px-10 bg-gray-400 rounded-md"
+            >
+              Back
+            </div>
+          )}
+          {step < 5 && (
+            <div
+              onClick={handleNext}
+              className="py-2 px-10 bg-[#FFCD21] rounded-md"
+            >
+              next
+            </div>
+          )}
+          {step == 5 && (
+            <button
+              className="py-2 px-10 bg-[#FFCD21] rounded-md"
+              type="submit"
+            >
+              submit
+            </button>
+          )}
         </div>
-        <button type="submit">submit</button>
+
         <button
           onClick={() =>
             handleDownload(
