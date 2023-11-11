@@ -7,9 +7,17 @@ import Step4 from "../components/Step4";
 import Step5 from "../components/Step5";
 
 import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { db, storage } from "../firebase";
 const Apllication = () => {
   const [step, setStep] = useState(1);
+  const [filesImage, setFilesImage] = useState({
+    stage1: {
+      passport: "",
+      diploma: "",
+      transcript: "",
+    },
+  });
   const [formData, setFormData] = useState({
     stage1: {
       firstName: "",
@@ -42,9 +50,38 @@ const Apllication = () => {
       emargencyContact: "",
       emrgencyEmail: "",
     },
+    stage4: {
+      countryOfPrevSchool: "",
+      namePfPrevSchool: "",
+      levelOfEducation: "",
+      graduationDate: "",
+      primaryLaguage: "",
+      schoolFrom: "",
+      schoolTo: "",
+      degreeName: "",
+      IHaveFromThiSschool: "",
+    },
+    stage5: {
+      diploma: "",
+      passport: "",
+      transcript: "",
+    },
   });
+
+  const metadata = {
+    contentDisposition: "attachment", // This instructs the browser to prompt for download
+  };
   const handleInputChange = (stage, inputName, value) => {
     setFormData((prevData) => ({
+      ...prevData,
+      [stage]: {
+        ...prevData[stage],
+        [inputName]: value,
+      },
+    }));
+  };
+  const filesInputHandel = (stage, inputName, value) => {
+    setFilesImage((prevData) => ({
       ...prevData,
       [stage]: {
         ...prevData[stage],
@@ -55,14 +92,53 @@ const Apllication = () => {
 
   const handelSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const docRef = await addDoc(collection(db, "formData"), formData);
-      console.log("Document written with ID:", docRef.id);
+      const diplomaStorageRef = ref(storage, "diplomas");
+      await uploadBytes(diplomaStorageRef, filesImage.stage1.diploma, metadata);
+      const diplomaUrl = await getDownloadURL(diplomaStorageRef);
+      // Upload passport file
+      const passportStorageRef = ref(storage, "passports");
+      await uploadBytes(
+        passportStorageRef,
+        filesImage.stage1.passport,
+        metadata
+      );
+      const passportUrl = await getDownloadURL(passportStorageRef);
+
+      const transcriptStorageRef = ref(storage, "transcripts");
+      await uploadBytes(
+        transcriptStorageRef,
+        filesImage.stage1.transcript,
+        metadata
+      );
+      const transcriptUrl = await getDownloadURL(transcriptStorageRef);
+
+      setFormData((prevData) => ({
+        ...prevData,
+        stage5: {
+          diploma: diplomaUrl,
+          passport: passportUrl,
+          transcript: transcriptUrl,
+        },
+      }));
+
+      if (diplomaUrl && passportUrl && transcriptUrl) {
+        const docRef = await addDoc(collection(db, "formData"), formData);
+        console.log("Document written with ID:", docRef.id);
+      }
     } catch (error) {
       console.error("Error adding document:", error);
     }
   };
-
+  const handleDownload = (fileUrl, fileName) => {
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const handleNext = () => {
     if (step < 5) {
       setStep((prevStep) => prevStep + 1);
@@ -97,7 +173,7 @@ const Apllication = () => {
           <Step4 formData={formData} handleInputChange={handleInputChange} />
         )}
         {step === 5 && (
-          <Step5 formData={formData} handleInputChange={handleInputChange} />
+          <Step5 filesImage={filesImage} filesInputHandel={filesInputHandel} />
         )}
         <div className="flex  gap-2  py-2 justify-end px-10">
           <div
@@ -114,6 +190,16 @@ const Apllication = () => {
           </div>
         </div>
         <button type="submit">submit</button>
+        <button
+          onClick={() =>
+            handleDownload(
+              "https://firebasestorage.googleapis.com/v0/b/brightforth-34e5d.appspot.com/o/transcripts?alt=media&token=2e4e4bba-ae0e-43c9-804f-29f37d00902a",
+              "Ngabo.pdf"
+            )
+          }
+        >
+          Download Transcript
+        </button>
       </form>
     </div>
   );

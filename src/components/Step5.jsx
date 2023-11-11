@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "./Input";
 
-const Step5 = () => {
+const Step5 = ({ filesImage, filesInputHandel }) => {
   return (
     <div className="flex w-full items-center flex-col pb-4 gap-6">
       <div className="flex gap-1 ">
@@ -211,7 +211,7 @@ const Step5 = () => {
       <div className="flex flex-col w-full">
         <div className="flex gap-2 w-full justify-center ">
           <div className="flex flex-col gap-2">
-            <h1 className="text-black font-[600]">Diplome</h1>
+            <h1 className="text-black font-[600]">Diploma</h1>
             <label
               htmlFor=""
               for="inputfile"
@@ -277,10 +277,10 @@ const Step5 = () => {
             </label>
           </div>
           <div className="flex flex-col gap-2">
-            <h1 className="text-black font-[600]">assport</h1>
+            <h1 className="text-black font-[600]">passport</h1>
             <label
               htmlFor=""
-              for="inputfile"
+              for="inputfile2"
               className=" cursor-pointer flex border-2 py-4 border-dashed rounded-lg items-center justify-between px-4  w-[250px]"
             >
               <div className="flex gap-2 ">
@@ -343,10 +343,10 @@ const Step5 = () => {
             </label>
           </div>
           <div className="flex flex-col gap-2">
-            <h1 className="text-black font-[600]">School report</h1>
+            <h1 className="text-black font-[600]">transcript</h1>
             <label
               htmlFor=""
-              for="inputfile"
+              for="inputfile3"
               className=" cursor-pointer flex border-2 py-4 border-dashed rounded-lg items-center justify-between px-4  w-[250px]"
             >
               <div className="flex gap-2 ">
@@ -408,9 +408,33 @@ const Step5 = () => {
               </svg>
             </label>
           </div>
-          <input type="file" id="inputfile" className="hidden" />
-          <input type="file" id="inputfile2" className="hidden" />
-          <input type="file" id="inputfile3" className="hidden" />
+          <input
+            type="file"
+            id="inputfile"
+            className="hidden"
+            value={filesImage.stage1.diplomma}
+            onChange={(e) =>
+              filesInputHandel("stage1", "diploma", e.target.files[0])
+            }
+          />
+          <input
+            type="file"
+            id="inputfile2"
+            className="hidden"
+            defaultValue={filesImage.stage1.passport}
+            onChange={(e) =>
+              filesInputHandel("stage1", "passport", e.target.files[0])
+            }
+          />
+          <input
+            type="file"
+            id="inputfile3"
+            className="hidden"
+            defaultValue={filesImage.stage1.transcript}
+            onChange={(e) =>
+              filesInputHandel("stage1", "transcript", e.target.files[0])
+            }
+          />
         </div>
       </div>
     </div>
