@@ -27,7 +27,7 @@ const Step1 = ({ formData, handleInputChange }) => {
 
   return (
     <div className="flex w-full items-center flex-col pb-4 gap-6">
-      <div className="flex gap-1 ">
+      <div className="grid grid-cols-3 blg:grid-cols-9 gap-1  ">
         <div className="flex flex-col gap-2 items-center">
           <div className="flex justify-center items-center w-14 h-14 rounded-full bg-[#07294D]">
             <svg
@@ -98,7 +98,7 @@ const Step1 = ({ formData, handleInputChange }) => {
             </span>
           </div>
         </div>
-        <span className="pt-8">
+        <span className="pt-8 hidden blg:flex">
           <svg
             width="87"
             height="3"
@@ -142,6 +142,7 @@ const Step1 = ({ formData, handleInputChange }) => {
             </span>
           </div>
         </div>
+
         <span className="pt-8">
           <svg
             width="87"
@@ -232,7 +233,7 @@ const Step1 = ({ formData, handleInputChange }) => {
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-4 w-full">
+        <div className="grid gap-4 grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Enter First name"
             label="First name"

@@ -4,12 +4,12 @@ import "./dropdown.css";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between px-[100px] py-2 itens-center">
+    <div className="flex justify-between px-[10px] md:px-[100px] py-2 itens-center">
       <div className="flex items-center">
         <img src={logo} alt="" className="w-[20vh]" />
       </div>
       <div className="links flex gap-[102px] items-center mt-2">
-        <ul className="flex text-black font-[600] text-[14px] gap-10 items-center">
+        <ul className="hidden md:flex text-black font-[100] text-[12px]  gap-4  items-center">
           <li>
             <a href="/">HOME</a>
           </li>

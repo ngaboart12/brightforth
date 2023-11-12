@@ -4,7 +4,7 @@ import logo2 from "../assets/logo2.png";
 const Footer = () => {
   return (
     <div className=" py-4 flex  flex-col bg-[#07294D]">
-      <div className="flex justify-between gap-2 border-b border-gray-500  px-20  py-10">
+      <div className="flex justify-between gap-2 border-b border-gray-500 px-4 blg:px-20  py-10">
         <div className="flex flex-col gap-2 max-w-[250px]">
           <img src={logo2} className="w-[20vh]" />
           <span className="text-[#C8C8C8] text-[14px]">
@@ -12,7 +12,7 @@ const Footer = () => {
             their dream schools abroad.
           </span>
         </div>
-        <div className=" grid grid-cols-3">
+        <div className=" grid grid-cols-2 blg:grid-cols-3">
           <div className="flex flex-col">
             <h1 className="text-[16px] text-[#FFA800] font-[600]">
               Quick links

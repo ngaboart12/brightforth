@@ -2,7 +2,7 @@ import React from "react";
 
 const LinkComponent = () => {
   return (
-    <div className="px-[100px] py-2 flex justify-between items-center">
+    <div className="px-[10px] md:px-[100px] py-2 flex justify-between items-center">
       <div className="flex gap-20 items-center">
         <a href="https://info@brightforth.rw" className="flex gap-2">
           <span>
