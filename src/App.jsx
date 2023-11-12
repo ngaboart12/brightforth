@@ -19,8 +19,8 @@ function App() {
       <Navbar />
       <div className="px-[20px] md:px-[100px]  pt-4 w-full">
         <Routes>
-          <Route path="/" element={<Apllication />} />
-          <Route path="/assess" element={<Assessment />} />
+          <Route path="/" element={<Assessment />} />
+          <Route path="/app" element={<Apllication />} />
           <Route path="/dash" element={<Dashboard />} />
         </Routes>
       </div>
