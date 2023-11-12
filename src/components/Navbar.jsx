@@ -35,9 +35,15 @@ const Navbar = () => {
               </span>
             </a>
             <ul>
-                <li><a href="">heee</a></li>
-                <li><a href="">heee</a></li>
-                <li><a href="">heee</a></li>
+              <li>
+                <a href="">heee</a>
+              </li>
+              <li>
+                <a href="">heee</a>
+              </li>
+              <li>
+                <a href="">heee</a>
+              </li>
             </ul>
           </li>
           <li>

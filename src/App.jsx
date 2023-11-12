@@ -8,13 +8,14 @@ import Apllication from "./pages/Apllication";
 import Assessment from "./pages/Assessment";
 import Footer from "./components/Footer";
 import Step6 from "./components/Step6";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="flex w-full flex-col">
-      <LinkComponent />
+      {/* <LinkComponent />
       <Navbar />
       <div className="px-[20px] md:px-[100px]  pt-4 w-full">
         <Routes>
@@ -22,7 +23,8 @@ function App() {
           <Route path="/assess" element={<Assessment />} />
         </Routes>
       </div>
-      <Footer />
+      <Footer /> */}
+      <Dashboard />
     </div>
   );
 }
