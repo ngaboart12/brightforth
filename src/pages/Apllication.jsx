@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Step1 from "../components/Step1";
 import Step2 from "../components/Step2";
@@ -10,6 +10,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase";
 const Apllication = () => {
+  const [formDataUpdated, setFormDataUpdated] = useState(false);
   const [step, setStep] = useState(1);
   const [filesImage, setFilesImage] = useState({
     stage1: {
@@ -67,10 +68,10 @@ const Apllication = () => {
       transcript: "",
     },
   });
-
   const metadata = {
     contentDisposition: "attachment", // This instructs the browser to prompt for download
   };
+
   const handleInputChange = (stage, inputName, value) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -89,6 +90,22 @@ const Apllication = () => {
       },
     }));
   };
+  useEffect(() => {
+    const createFirestoreDocument = async () => {
+      try {
+        const docRef = await addDoc(collection(db, "formData"), formData);
+        console.log("Document written with ID:", docRef.id);
+      } catch (error) {
+        console.error("Error adding document:", error);
+      }
+    };
+
+    if (formDataUpdated) {
+      createFirestoreDocument();
+      // Reset the flag after creating the document
+      setFormDataUpdated(false);
+    }
+  }, [formData, formDataUpdated]);
 
   const handelSubmit = async (e) => {
     e.preventDefault();
@@ -98,30 +115,36 @@ const Apllication = () => {
       filesImage.stage1.transcript
     ) {
       try {
-        const diplomaStorageRef = ref(storage, "diplomas");
-        await uploadBytes(
-          diplomaStorageRef,
-          filesImage.stage1.diploma,
-          metadata
+        const diplomaStorageRef = ref(
+          storage,
+          `diplomas/${filesImage.stage1.diploma}`
         );
-        const diplomaUrl = await getDownloadURL(diplomaStorageRef);
-        // Upload passport file
-        const passportStorageRef = ref(storage, "passports");
-        await uploadBytes(
-          passportStorageRef,
-          filesImage.stage1.passport,
-          metadata
+        const passportStorageRef = ref(
+          storage,
+          `passports/${filesImage.stage1.passport}`
         );
-        const passportUrl = await getDownloadURL(passportStorageRef);
+        const transcriptStorageRef = ref(
+          storage,
+          `transcripts/${filesImage.stage1.transcript}`
+        );
 
-        const transcriptStorageRef = ref(storage, "transcripts");
-        await uploadBytes(
-          transcriptStorageRef,
-          filesImage.stage1.transcript,
-          metadata
-        );
-        const transcriptUrl = await getDownloadURL(transcriptStorageRef);
+        // Upload files and get download URLs
+        const [diplomaUrl, passportUrl, transcriptUrl] = await Promise.all([
+          uploadAndGetUrl(
+            diplomaStorageRef,
+            filesImage.stage1.diploma,
+            metadata
+          ),
+          uploadAndGetUrl(
+            passportStorageRef,
+            filesImage.stage1.passport,
+            metadata,
+            metadata
+          ),
+          uploadAndGetUrl(transcriptStorageRef, filesImage.stage1.transcript),
+        ]);
 
+        // Update the state within the then block of getDownloadURL
         setFormData((prevData) => ({
           ...prevData,
           stage5: {
@@ -132,8 +155,8 @@ const Apllication = () => {
         }));
 
         if (diplomaUrl && passportUrl && transcriptUrl) {
-          const docRef = await addDoc(collection(db, "formData"), formData);
-          console.log("Document written with ID:", docRef.id);
+          // Set the flag to true to trigger the useEffect
+          setFormDataUpdated(true);
         }
       } catch (error) {
         console.error("Error adding document:", error);
@@ -142,6 +165,12 @@ const Apllication = () => {
       alert("all files are required");
     }
   };
+
+  const uploadAndGetUrl = async (storageRef, file, metadata) => {
+    await uploadBytes(storageRef, file, metadata);
+    return getDownloadURL(storageRef);
+  };
+
   const handleDownload = (fileUrl, fileName) => {
     const link = document.createElement("a");
     link.href = fileUrl;

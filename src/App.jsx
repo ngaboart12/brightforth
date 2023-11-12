@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="flex w-full flex-col">
-      {/* <LinkComponent />
+      <LinkComponent />
       <Navbar />
       <div className="px-[20px] md:px-[100px]  pt-4 w-full">
         <Routes>
@@ -23,8 +23,8 @@ function App() {
           <Route path="/assess" element={<Assessment />} />
         </Routes>
       </div>
-      <Footer /> */}
-      <Dashboard />
+      <Footer />
+      {/* <Dashboard /> */}
     </div>
   );
 }
