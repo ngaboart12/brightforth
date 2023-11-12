@@ -21,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Apllication />} />
           <Route path="/assess" element={<Assessment />} />
+          <Route path="/dash" element={<Dashboard />} />
         </Routes>
       </div>
       <Footer />

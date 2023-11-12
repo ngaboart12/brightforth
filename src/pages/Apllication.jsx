@@ -5,11 +5,21 @@ import Step2 from "../components/Step2";
 import Step3 from "../components/Step3";
 import Step4 from "../components/Step4";
 import Step5 from "../components/Step5";
+import { css } from "@emotion/react";
+import { ClipLoader } from "react-spinners";
 
 import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
+
 const Apllication = () => {
+  const [loading, setLoading] = useState(false);
   const [formDataUpdated, setFormDataUpdated] = useState(false);
   const [step, setStep] = useState(1);
   const [filesImage, setFilesImage] = useState({
@@ -94,9 +104,11 @@ const Apllication = () => {
     const createFirestoreDocument = async () => {
       try {
         const docRef = await addDoc(collection(db, "formData"), formData);
+        setLoading(false);
         console.log("Document written with ID:", docRef.id);
       } catch (error) {
         console.error("Error adding document:", error);
+        setLoading(false);
       }
     };
 
@@ -115,18 +127,20 @@ const Apllication = () => {
       filesImage.stage1.transcript
     ) {
       try {
+        setLoading(true);
         const diplomaStorageRef = ref(
           storage,
-          `diplomas/${filesImage.stage1.diploma}`
+          `diplomas/${formData.stage1.lastName}`
         );
         const passportStorageRef = ref(
           storage,
-          `passports/${filesImage.stage1.passport}`
+          `passports/${formData.stage1.lastName}`
         );
         const transcriptStorageRef = ref(
           storage,
-          `transcripts/${filesImage.stage1.transcript}`
+          `transcripts/${formData.stage1.lastName}`
         );
+        await new Promise((resolve) => setTimeout(resolve, 2000));
 
         // Upload files and get download URLs
         const [diplomaUrl, passportUrl, transcriptUrl] = await Promise.all([
@@ -302,16 +316,14 @@ const Apllication = () => {
           )}
         </div>
 
-        <button
-          onClick={() =>
-            handleDownload(
-              "https://firebasestorage.googleapis.com/v0/b/brightforth-34e5d.appspot.com/o/transcripts?alt=media&token=2e4e4bba-ae0e-43c9-804f-29f37d00902a",
-              "Ngabo.pdf"
-            )
-          }
-        >
-          Download Transcript
-        </button>
+        <ClipLoader
+          color="#36D7B7"
+          loading={loading}
+          css={override}
+          size={50}
+        />
+
+        {loading && <p>Uploading...</p>}
       </form>
     </div>
   );
