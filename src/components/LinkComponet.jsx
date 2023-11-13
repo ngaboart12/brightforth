@@ -2,14 +2,17 @@ import React from "react";
 
 const LinkComponent = () => {
   return (
-    <div className="px-[10px] md:px-[100px] py-2 flex justify-between items-center">
-      <div className="flex gap-20 items-center">
-        <a href="https://info@brightforth.rw" className="flex gap-2">
+    <div className="px-[10px] md:px-[100px] py-2 flex flex-col md:flex-row justify-between items-center">
+      <div className="flex gap-10 blg:gap-20 items-center">
+        <a
+          href="https://info@brightforth.rw"
+          className="flex gap-2 items-center"
+        >
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
             >
@@ -24,13 +27,16 @@ const LinkComponent = () => {
               />
             </svg>
           </span>
-          <span>info@brightforth.rw</span>
+          <span className="text-[14px]">info@brightforth.rw</span>
         </a>
-        <a href="https://info@brightforth.rw" className="flex gap-2">
+        <a
+          href="https://info@brightforth.rw"
+          className="flex gap-2 items-center"
+        >
           <span>
             <svg
-              width="24"
-              height="24"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -43,15 +49,15 @@ const LinkComponent = () => {
               />
             </svg>
           </span>
-          <span>+250791858282</span>
+          <span className="text-[12px]">+250791858282</span>
         </a>
       </div>
       <div className="flex gap-4 items-center">
-        <span className="text-[18px] font-[500]">Follow us</span>
+        <span className="text-[14px] font-[500]">Follow us</span>
         <a href="" className="">
           <svg
-            width="24"
-            height="24"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -66,8 +72,8 @@ const LinkComponent = () => {
         </a>
         <a href="" className="">
           <svg
-            width="24"
-            height="24"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -82,8 +88,8 @@ const LinkComponent = () => {
         </a>
         <a href="" className="">
           <svg
-            width="24"
-            height="24"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -108,8 +114,8 @@ const LinkComponent = () => {
         </a>
         <a href="" className="">
           <svg
-            width="24"
-            height="24"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

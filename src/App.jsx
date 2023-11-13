@@ -17,7 +17,7 @@ function App() {
     <div className="flex w-full flex-col">
       <LinkComponent />
       <Navbar />
-      <div className="px-[20px] md:px-[100px]  pt-4 w-full">
+      <div className="px-[20px] blg:px-[100px] pt-4 w-full">
         <Routes>
           <Route path="/" element={<Assessment />} />
           <Route path="/app" element={<Apllication />} />

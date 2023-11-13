@@ -103,7 +103,7 @@ const Apllication = () => {
   useEffect(() => {
     const createFirestoreDocument = async () => {
       try {
-        const docRef = await addDoc(collection(db, "formData"), formData);
+        const docRef = await addDoc(collection(db, "Application"), formData);
         setLoading(false);
         console.log("Document written with ID:", docRef.id);
       } catch (error) {
@@ -267,7 +267,7 @@ const Apllication = () => {
 
   return (
     <div className="flex w-full flex-col items-center justify-center">
-      <div className="py-[12px] w-[80%] flex items-center justify-center bg-[#07294D] rounded-md">
+      <div className="py-[12px] w-1/2 flex items-center justify-center bg-[#07294D] rounded-md">
         <span className="text-white text-[20px] font-[300]">Application</span>
       </div>
       <form

@@ -233,7 +233,7 @@ const Step2 = ({ formData, handleInputChange }) => {
 
       <div className="flex flex-col w-full">
         <h1 className="text-black font-[600] text-[18px]">Passport</h1>
-        <div className="grid gap-4 grid-cols-4 w-full">
+        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Enter Passport number"
             label="Passport number"
@@ -274,7 +274,7 @@ const Step2 = ({ formData, handleInputChange }) => {
       </div>
       <div className="flex flex-col w-full">
         <h1 className="text-black font-[600] text-[18px]">Address</h1>
-        <div className="grid gap-4 grid-cols-4 w-full">
+        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <div className="flex flex-col  gap-1 text-black">
             <span>Country</span>
             <select

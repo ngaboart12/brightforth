@@ -209,7 +209,7 @@ const Step4 = ({ formData, handleInputChange }) => {
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <div className="grid gap-4 grid-cols-4 w-full">
+        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Select country"
             label="Country of the Previous school:"

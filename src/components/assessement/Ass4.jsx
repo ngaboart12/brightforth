@@ -1,12 +1,12 @@
 import React from "react";
 import Input from "../Input";
 
-const Ass4 = () => {
+const Ass4 = ({ formData, handleInputChange }) => {
   return (
     <div className="flex flex-col gap-2 pb-10">
       <div className="flex flex-col gap-10">
         <h1 className="text-[#07294D] text-[24px] font-bold">Other</h1>
-        <div className="flex justify-between bg-[#07294D] py-8 px-20">
+        <div className="flex flex-col gap-4 justify-center md:flex-row bg-[#07294D] py-8 px-10 items-center">
           <div className="flex flex-col gap-2">
             <span className="text-white text-[18px] font-light">
               I have criminal record
@@ -16,6 +16,10 @@ const Ass4 = () => {
                 <input
                   type="radio"
                   name="criminal"
+                  value="yes"
+                  onChange={(e) =>
+                    handleInputChange("other", "criminalRecord", e.target.value)
+                  }
                   className="border border-white w-4"
                 />
                 <span className="text-[white]">Yes</span>
@@ -24,6 +28,10 @@ const Ass4 = () => {
                 <input
                   type="radio"
                   name="criminal"
+                  value="no"
+                  onChange={(e) =>
+                    handleInputChange("other", "criminalRecord", e.target.value)
+                  }
                   className="border border-white w-4"
                 />
                 <span className="text-[white]">Yes</span>
@@ -38,7 +46,15 @@ const Ass4 = () => {
               <div className="flex gap-2 bg-[#072F5A] p-4 px-8 rounded-lg">
                 <input
                   type="radio"
-                  name="criminal"
+                  name="condition"
+                  value="yes"
+                  onChange={(e) =>
+                    handleInputChange(
+                      "other",
+                      "seriousCondition",
+                      e.target.value
+                    )
+                  }
                   className="border border-white w-4"
                 />
                 <span className="text-[white]">Yes</span>
@@ -46,7 +62,15 @@ const Ass4 = () => {
               <div className="flex gap-2 bg-[#072F5A] p-4 px-8 rounded-lg">
                 <input
                   type="radio"
-                  name="criminal"
+                  name="condition"
+                  value="no"
+                  onChange={(e) =>
+                    handleInputChange(
+                      "other",
+                      "seriousCondition",
+                      e.target.value
+                    )
+                  }
                   className="border border-white w-4"
                 />
                 <span className="text-[white]">Yes</span>
@@ -54,14 +78,29 @@ const Ass4 = () => {
             </div>
           </div>
         </div>
-        <div className="grid gap-2 grid-cols-2 w-1/2 ">
+        <div className="grid gap-2 md:grid-cols-2  ">
           <Input
             placeholder="select language"
             label="first official language"
+            value={formData.other.FirstofficialLanguage}
+            onChange={(e) =>
+              handleInputChange(
+                "other",
+                "FirstofficialLanguage",
+                e.target.value
+              )
+            }
           />
-          <Input placeholder="message here" label="message" />
+          <Input
+            placeholder="message here"
+            label="message"
+            value={formData.other.Message}
+            onChange={(e) =>
+              handleInputChange("other", "Message", e.target.value)
+            }
+          />
         </div>
-        <div className="flex gap-10 py-8 items-center px-20 bg-[#07294D]">
+        <div className="flex flex-col gap-4 py-8 items-center px-4 bg-[#07294D] md:flex-row md:px-20">
           <div>
             <svg
               width="59"
@@ -81,7 +120,7 @@ const Ass4 = () => {
               />
             </svg>
           </div>
-          <span className="text-white">
+          <span className="text-white text-center md:text-start">
             by submitting this assessment you agree to receive important
             immigration news and updates from Canadim
           </span>

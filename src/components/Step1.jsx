@@ -27,9 +27,9 @@ const Step1 = ({ formData, handleInputChange }) => {
 
   return (
     <div className="flex w-full items-center flex-col pb-4 gap-6">
-      <div className="grid grid-cols-3 blg:grid-cols-9 gap-1  ">
+      <div className=" flex   ">
         <div className="flex flex-col gap-2 items-center">
-          <div className="flex justify-center items-center w-14 h-14 rounded-full bg-[#07294D]">
+          <div className="flex justify-center items-center w-10 h-10 rounded-full bg-[#07294D]">
             <svg
               width="24"
               height="24"
@@ -45,18 +45,18 @@ const Step1 = ({ formData, handleInputChange }) => {
               />
             </svg>
           </div>
-          <div className="flex flex-col items-center">
-            <span className="text-[#777777] text-[14px] font-[300]">
+          <div className="flex flex-col items-center leading-3">
+            <span className="text-[#777777] text-[12px] font-[300]">
               Setp 1
             </span>
-            <span className="text-[16px] font-[400] text-[#07294D]">
+            <span className="text-[12px] font-[400] text-[#07294D]">
               Personal info
             </span>
           </div>
         </div>
-        <span className="pt-8">
+        <span className="pt-5">
           <svg
-            width="87"
+            width="50"
             height="3"
             viewBox="0 0 87 3"
             fill="none"
@@ -73,7 +73,7 @@ const Step1 = ({ formData, handleInputChange }) => {
 
         {/* setp 2 */}
         <div className="flex flex-col gap-2 items-center">
-          <div className="flex justify-center items-center w-14 h-14 rounded-full bg-[#E0EFFF]">
+          <div className="flex justify-center items-center w-10 h-10 rounded-full bg-[#E0EFFF]">
             <svg
               width="24"
               height="24"
@@ -89,18 +89,18 @@ const Step1 = ({ formData, handleInputChange }) => {
               />
             </svg>
           </div>
-          <div className="flex flex-col items-center">
-            <span className="text-[#777777] text-[14px] font-[300]">
+          <div className="flex flex-col items-center leading-3">
+            <span className="text-[#777777] text-[12px] font-[300]">
               Setp 2
             </span>
-            <span className="text-[16px] text-center font-[400] text-[#777777]">
+            <span className="text-[12px] text-center font-[400] text-[#777777]">
               Passport & <br /> Addresses
             </span>
           </div>
         </div>
-        <span className="pt-8 hidden blg:flex">
+        <span className="pt-6">
           <svg
-            width="87"
+            width="47"
             height="3"
             viewBox="0 0 87 3"
             fill="none"
@@ -116,8 +116,8 @@ const Step1 = ({ formData, handleInputChange }) => {
         </span>
 
         {/* setp 3 */}
-        <div className="flex flex-col gap-2 items-center">
-          <div className="flex justify-center items-center w-14 h-14 rounded-full bg-[#E0EFFF]">
+        <div className="flex flex-col gap-2 items-center leading-3">
+          <div className="flex justify-center items-center w-10 h-10 rounded-full bg-[#E0EFFF]">
             <svg
               width="24"
               height="24"
@@ -133,19 +133,19 @@ const Step1 = ({ formData, handleInputChange }) => {
               />
             </svg>
           </div>
-          <div className="flex flex-col items-center">
-            <span className="text-[#777777] text-[14px] font-[300]">
+          <div className="flex flex-col items-center leading-3">
+            <span className="text-[#777777] text-[12px] font-[300]">
               Setp 3
             </span>
-            <span className="text-[16px] text-center font-[400] text-[#777777]">
+            <span className="text-[14px] text-center font-[400] text-[#777777]">
               Family's information <br /> &Emergency
             </span>
           </div>
         </div>
 
-        <span className="pt-8">
+        <span className="pt-6">
           <svg
-            width="87"
+            width="47"
             height="3"
             viewBox="0 0 87 3"
             fill="none"
@@ -162,7 +162,7 @@ const Step1 = ({ formData, handleInputChange }) => {
 
         {/* setp 4 */}
         <div className="flex flex-col gap-2 items-center">
-          <div className="flex justify-center items-center w-14 h-14 rounded-full bg-[#E0EFFF]">
+          <div className="flex justify-center items-center w-10 h-10 rounded-full bg-[#E0EFFF]">
             <svg
               width="24"
               height="24"
@@ -178,18 +178,18 @@ const Step1 = ({ formData, handleInputChange }) => {
               />
             </svg>
           </div>
-          <div className="flex flex-col items-center">
-            <span className="text-[#777777] text-[14px] font-[300]">
+          <div className="flex flex-col items-center leading-3">
+            <span className="text-[#777777] text-[12px] font-[300]">
               Setp 4
             </span>
-            <span className="text-[16px] text-center font-[400] text-[#777777]">
+            <span className="text-[14px] text-center font-[400] text-[#777777]">
               School Information
             </span>
           </div>
         </div>
-        <span className="pt-8">
+        <span className="pt-6">
           <svg
-            width="87"
+            width="47"
             height="3"
             viewBox="0 0 87 3"
             fill="none"
@@ -206,7 +206,7 @@ const Step1 = ({ formData, handleInputChange }) => {
 
         {/* setp 4 */}
         <div className="flex flex-col gap-2 items-center">
-          <div className="flex justify-center items-center w-14 h-14 rounded-full bg-[#E0EFFF]">
+          <div className="flex justify-center items-center w-10 h-10 rounded-full bg-[#E0EFFF]">
             <svg
               width="24"
               height="24"
@@ -222,18 +222,18 @@ const Step1 = ({ formData, handleInputChange }) => {
               />
             </svg>
           </div>
-          <div className="flex flex-col items-center">
-            <span className="text-[#777777] text-[14px] font-[300]">
+          <div className="flex flex-col items-center leading-3">
+            <span className="text-[#777777] text-[12px] font-[300]">
               Setp 5
             </span>
-            <span className="text-[16px] text-center font-[400] text-[#777777]">
+            <span className="text-[14px] text-center font-[400] text-[#777777]">
               Documents
             </span>
           </div>
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <div className="grid gap-4 grid-cols-2 blg:grid-cols-4 w-full">
+        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Enter First name"
             label="First name"

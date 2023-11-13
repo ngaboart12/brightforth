@@ -211,7 +211,7 @@ const Step3 = ({ formData, handleInputChange }) => {
       <div className="flex flex-col w-full">
         <h1 className="text-black font-[600] text-[18px]">Parent</h1>
 
-        <div className="grid gap-4 grid-cols-4 w-full">
+        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Enter Father name"
             label="Father name"
@@ -252,7 +252,7 @@ const Step3 = ({ formData, handleInputChange }) => {
       </div>
       <div className="flex flex-col w-full">
         <h1 className="text-black font-[600] text-[18px]">Emergency</h1>
-        <div className="grid gap-4 grid-cols-4 w-full">
+        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Enter name"
             label="Name"

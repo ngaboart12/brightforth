@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../Input";
 
-const Ass2 = () => {
+const Ass2 = ({ formData, handleInputChange }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   // Function to handle checkbox change
@@ -16,6 +16,9 @@ const Ass2 = () => {
       setSelectedOptions([...selectedOptions, value]);
     }
   };
+  useEffect(() => {
+    handleInputChange("educationProgram", "programs", selectedOptions);
+  }, [selectedOptions]);
   return (
     <div className="flex flex-col gap-2 justify-center items-center py-4">
       <div className="flex flex-col w-full py-10 ">
@@ -26,7 +29,7 @@ const Ass2 = () => {
           Please select yo top 3 choice for programs to study abroad
         </span>
 
-        <div className="grid gap-4 grid-cols-2 w-full py-4 ">
+        <div className="grid gap-4 md:grid-cols-2 w-full py-4 ">
           <div className="flex gap-2">
             <input
               type="checkbox"
