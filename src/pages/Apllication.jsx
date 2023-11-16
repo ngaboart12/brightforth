@@ -27,6 +27,9 @@ const Apllication = () => {
       passport: "",
       diploma: "",
       transcript: "",
+      EligibilityLetterports: "",
+      NonCriminalRecord: "",
+      EnglishProficiency: "",
     },
   });
   const [formData, setFormData] = useState({
@@ -71,13 +74,18 @@ const Apllication = () => {
       schoolTo: "",
       degreeName: "",
       IHaveFromThiSschool: "",
+      applicationSchool: [],
     },
     stage5: {
       diploma: "",
       passport: "",
       transcript: "",
+      EligibilityLetterports: "",
+      NonCriminalRecord: "",
+      EnglishProficiency: "",
     },
   });
+
   const metadata = {
     contentDisposition: "attachment", // This instructs the browser to prompt for download
   };
@@ -122,9 +130,13 @@ const Apllication = () => {
   const handelSubmit = async (e) => {
     e.preventDefault();
     if (
+      formData.stage4.applicationSchool !== "" &&
       filesImage.stage1.diploma !== "" &&
-      filesImage.stage1.passport &&
-      filesImage.stage1.transcript
+      filesImage.stage1.passport != "" &&
+      filesImage.stage1.transcript !== "" &&
+      filesImage.stage1.EligibilityLetterports !== "" &&
+      filesImage.stage1.NonCriminalRecord !== "" &&
+      filesImage.stage1.EnglishProficiency !== ""
     ) {
       try {
         setLoading(true);
@@ -140,10 +152,29 @@ const Apllication = () => {
           storage,
           `transcripts/${formData.stage1.lastName}`
         );
+        const EligibilityLetterportsStorageRef = ref(
+          storage,
+          `EligibilityLetterports/${formData.stage1.lastName}`
+        );
+        const NonCriminalRecordStorageRef = ref(
+          storage,
+          `NonCriminalRecord/${formData.stage1.lastName}`
+        );
+        const EnglishProficiencyStorageRef = ref(
+          storage,
+          `EnglishProficiency/${formData.stage1.lastName}`
+        );
         await new Promise((resolve) => setTimeout(resolve, 2000));
 
         // Upload files and get download URLs
-        const [diplomaUrl, passportUrl, transcriptUrl] = await Promise.all([
+        const [
+          diplomaUrl,
+          passportUrl,
+          transcriptUrl,
+          EligibilityLetterportsUrl,
+          NonCriminalRecordUrl,
+          EnglishProficiencyUrl,
+        ] = await Promise.all([
           uploadAndGetUrl(
             diplomaStorageRef,
             filesImage.stage1.diploma,
@@ -152,10 +183,28 @@ const Apllication = () => {
           uploadAndGetUrl(
             passportStorageRef,
             filesImage.stage1.passport,
-            metadata,
             metadata
           ),
-          uploadAndGetUrl(transcriptStorageRef, filesImage.stage1.transcript),
+          uploadAndGetUrl(
+            transcriptStorageRef,
+            filesImage.stage1.transcript,
+            metadata
+          ),
+          uploadAndGetUrl(
+            EligibilityLetterportsStorageRef,
+            filesImage.stage1.EligibilityLetterports,
+            metadata
+          ),
+          uploadAndGetUrl(
+            NonCriminalRecordStorageRef,
+            filesImage.stage1.NonCriminalRecord,
+            metadata
+          ),
+          uploadAndGetUrl(
+            EnglishProficiencyStorageRef,
+            filesImage.stage1.EnglishProficiency,
+            metadata
+          ),
         ]);
 
         // Update the state within the then block of getDownloadURL
@@ -165,6 +214,9 @@ const Apllication = () => {
             diploma: diplomaUrl,
             passport: passportUrl,
             transcript: transcriptUrl,
+            EligibilityLetterports: EligibilityLetterportsUrl,
+            NonCriminalRecord: NonCriminalRecordUrl,
+            EnglishProficiency: EnglishProficiencyUrl,
           },
         }));
 
@@ -287,7 +339,11 @@ const Apllication = () => {
           <Step4 formData={formData} handleInputChange={handleInputChange} />
         )}
         {step === 5 && (
-          <Step5 filesImage={filesImage} filesInputHandel={filesInputHandel} />
+          <Step5
+            filesImage={filesImage}
+            filesInputHandel={filesInputHandel}
+            handleInputChange={handleInputChange}
+          />
         )}
         <div className="flex  gap-2  py-2 justify-end px-10">
           {step > 1 && (

@@ -233,7 +233,7 @@ const Step1 = ({ formData, handleInputChange }) => {
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
+        <div className="grid gap-4 gap-y-10 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Enter First name"
             label="First name"
@@ -270,13 +270,22 @@ const Step1 = ({ formData, handleInputChange }) => {
               handleInputChange("stage1", "dateOfBirth", e.target.value)
             }
           />
+
+          <Input
+            placeholder="Enter place of birth"
+            label="Place Of Birth"
+            value={formData.stage1.placeOfBirth}
+            onChange={(e) =>
+              handleInputChange("stage1", "placeOfBirth", e.target.value)
+            }
+          />
           <div className="flex flex-col  gap-1 text-black">
-            <span>Place of Birth</span>
+            <span>Nationality</span>
             <select
               className="border py-3 rounded-md px-4 outline-none text-[#07294D]"
-              value={formData.stage1.placeOfBirth}
+              value={formData.stage1.nationality}
               onChange={(e) =>
-                handleInputChange("stage1", "placeOfBirth", e.target.value)
+                handleInputChange("stage1", "nationality", e.target.value)
               }
             >
               <option value="" disabled>
@@ -290,14 +299,6 @@ const Step1 = ({ formData, handleInputChange }) => {
             </select>
           </div>
 
-          <Input
-            placeholder="Select nationality"
-            label="Nationality"
-            value={formData.stage1.nationality}
-            onChange={(e) =>
-              handleInputChange("stage1", "nationality", e.target.value)
-            }
-          />
           <div className="flex flex-col  gap-1 text-black">
             <span>Gender</span>
             <div className="flex gap-2 w-full">

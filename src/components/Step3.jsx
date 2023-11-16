@@ -208,7 +208,7 @@ const Step3 = ({ formData, handleInputChange }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full mb-10">
         <h1 className="text-black font-[600] text-[18px]">Parent</h1>
 
         <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
@@ -224,7 +224,7 @@ const Step3 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Father Contact"
             label="Father Contact"
-            type="text"
+            type="number"
             value={formData.stage3.fatherContact}
             onChange={(e) =>
               handleInputChange("stage3", "fatherContact", e.target.value)
@@ -242,7 +242,7 @@ const Step3 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Mother contact"
             label="Mother Contact"
-            type="text"
+            type="number"
             value={formData.stage3.motherContact}
             onChange={(e) =>
               handleInputChange("stage3", "motherContact", e.target.value)
@@ -274,7 +274,7 @@ const Step3 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Contact"
             label="Contact"
-            type="text"
+            type="number"
             value={formData.stage3.emargencyContact}
             onChange={(e) =>
               handleInputChange("stage3", "emargencyContact", e.target.value)
@@ -283,7 +283,7 @@ const Step3 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Email"
             label="Email"
-            type="text"
+            type="email"
             value={formData.stage3.emrgencyEmail}
             onChange={(e) =>
               handleInputChange("stage3", "emrgencyEmail", e.target.value)

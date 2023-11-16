@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../Input";
 
 const Ass1 = ({ formData, handleInputChange }) => {
+  const [allCountries, setAllCountries] = useState([]);
+
+  useEffect(() => {
+    const fetchAllCountries = async () => {
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        const data = await response.json();
+
+        if (response.ok) {
+          setAllCountries(data);
+        } else {
+          console.error("Error fetching countries:", data.message);
+        }
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+
+    fetchAllCountries();
+  }, []);
+  const levelEducation = [
+    { name: "Less than secondary sechool" },
+    { name: "Secondary Diploma" },
+    { name: "One-year post-secondary program" },
+    { name: "Two-year post-secondary program" },
+    { name: "Bacherol's Degree" },
+    { name: "Two or More post-secondary programs" },
+    { name: "Master's Degree" },
+    { name: "Doctor Level univeristy" },
+  ];
   return (
     <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-10">
       <h1 className="text-[#07294D] text-center text-xl leading-4 md:text-4xl lg:text-5xl font-bold  md:leading-8">
@@ -41,19 +71,30 @@ const Ass1 = ({ formData, handleInputChange }) => {
               handleInputChange("personInfo", "emailAdrress", e.target.value)
             }
           />
-          <Input
-            placeholder="Nationality"
-            label="Nationality"
-            type="text"
-            value={formData.personInfo.nationality}
-            onChange={(e) =>
-              handleInputChange("personInfo", "nationality", e.target.value)
-            }
-          />
+
+          <div className="flex flex-col  gap-1 text-black">
+            <span>Nationality</span>
+            <select
+              className="border py-3 rounded-md px-4 outline-none text-[#07294D]"
+              value={formData.personInfo.nationality}
+              onChange={(e) =>
+                handleInputChange("personInfo", "nationality", e.target.value)
+              }
+            >
+              <option value="" disabled>
+                Select Nationality
+              </option>
+              {allCountries.map((country) => (
+                <option key={country.name.common} value={country.name.common}>
+                  {country.name.common}
+                </option>
+              ))}
+            </select>
+          </div>
           <Input
             placeholder="Country of Residence"
             label="Country of Residence"
-            type="number"
+            type="Text"
             value={formData.personInfo.countryResidence}
             onChange={(e) =>
               handleInputChange(
@@ -72,19 +113,34 @@ const Ass1 = ({ formData, handleInputChange }) => {
               handleInputChange("personInfo", "Age", e.target.value)
             }
           />
-          <Input
-            placeholder="select"
-            label=" highest level of education?"
-            type="text"
-            value={formData.personInfo.levelOfEducation}
-            onChange={(e) =>
-              handleInputChange(
-                "personInfo",
-                "levelOfEducation",
-                e.target.value
-              )
-            }
-          />
+
+          <div className="flex flex-col  gap-1 text-black">
+            <span>Highest Level Of Eduction</span>
+            <select
+              className="border py-3 rounded-md px-4 outline-none text-[#07294D] "
+              value={formData.personInfo.levelOfEducation}
+              onChange={(e) =>
+                handleInputChange(
+                  "personInfo",
+                  "levelOfEducation",
+                  e.target.value
+                )
+              }
+            >
+              <option value="" disabled>
+                Please Select
+              </option>
+              {levelEducation.map((level) => (
+                <option
+                  key={level.name}
+                  value={level.name}
+                  className="text-[14px]"
+                >
+                  {level.name}
+                </option>
+              ))}
+            </select>
+          </div>
           <Input
             placeholder="Enter Faculity"
             label="faculity"
@@ -97,7 +153,7 @@ const Ass1 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Phone number"
             label="Phone number"
-            type="text"
+            type="number"
             value={formData.personInfo.phoneNumber}
             onChange={(e) =>
               handleInputChange("personInfo", "phoneNumber", e.target.value)

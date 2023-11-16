@@ -26,6 +26,7 @@ const Dashboard = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
           {/* Add your dashboard components here */}
+          
           <div className="bg-white p-4 rounded shadow-md">
             <h3 className="text-lg font-semibold mb-2">Component 1</h3>
             <TableOfAplicant />

@@ -2,6 +2,16 @@ import React from "react";
 import Input from "./Input";
 
 const Step4 = ({ formData, handleInputChange }) => {
+  const levelEducation = [
+    { name: "Less than secondary sechool" },
+    { name: "Secondary Diploma" },
+    { name: "One-year post-secondary program" },
+    { name: "Two-year post-secondary program" },
+    { name: "Bacherol's Degree" },
+    { name: "Two or More post-secondary programs" },
+    { name: "Master's Degree" },
+    { name: "Doctor Level univeristy" },
+  ];
   return (
     <div className="flex w-full items-center flex-col pb-4 gap-6">
       <div className="flex gap-1 ">
@@ -209,7 +219,7 @@ const Step4 = ({ formData, handleInputChange }) => {
         </div>
       </div>
       <div className="flex flex-col w-full">
-        <div className="grid gap-4 sm:grid-cols-2 blg:grid-cols-4 w-full">
+        <div className="grid gap-4 gap-y-10 mt-6 sm:grid-cols-2 blg:grid-cols-4 w-full">
           <Input
             placeholder="Select country"
             label="Country of the Previous school:"
@@ -228,15 +238,30 @@ const Step4 = ({ formData, handleInputChange }) => {
               handleInputChange("stage4", "namePfPrevSchool", e.target.value)
             }
           />
-          <Input
-            placeholder="Enter level of education"
-            label="level of education"
-            type="text"
-            value={formData.stage4.levelOfEducation}
-            onChange={(e) =>
-              handleInputChange("stage4", "levelOfEducation", e.target.value)
-            }
-          />
+          <div className="flex flex-col  gap-1 text-black">
+            <span>Level Of Eduction</span>
+            <select
+              className="border py-3 rounded-md px-4 outline-none text-[#07294D] "
+              value={formData.stage4.levelOfEducation}
+              onChange={(e) =>
+                handleInputChange("stage4", "levelOfEducation", e.target.value)
+              }
+            >
+              <option value="" disabled>
+                Please Select
+              </option>
+              {levelEducation.map((level) => (
+                <option
+                  key={level.name}
+                  value={level.name}
+                  className="text-[14px]"
+                >
+                  {level.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <Input
             placeholder="Enter Graduation date"
             label="Graduation date"

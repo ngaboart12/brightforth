@@ -237,7 +237,7 @@ const Step2 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Passport number"
             label="Passport number"
-            type="text"
+            type="number"
             value={formData.stage2.passportNumber}
             onChange={(e) =>
               handleInputChange("stage2", "passportNumber", e.target.value)
@@ -255,7 +255,7 @@ const Step2 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="expiry date"
             label="Passport expiry date"
-            type="text"
+            type="date"
             value={formData.stage2.passportExpiryDate}
             onChange={(e) =>
               handleInputChange("stage2", "passportExpiryDate", e.target.value)
@@ -315,7 +315,7 @@ const Step2 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Contact number"
             label="Contact number"
-            type="text"
+            type="number"
             value={formData.stage2.contactNumber}
             onChange={(e) =>
               handleInputChange("stage2", "contactNumber", e.target.value)
@@ -324,7 +324,7 @@ const Step2 = ({ formData, handleInputChange }) => {
           <Input
             placeholder="Enter Email"
             label="Email"
-            type="text"
+            type="email"
             value={formData.stage2.email}
             onChange={(e) =>
               handleInputChange("stage2", "email", e.target.value)
