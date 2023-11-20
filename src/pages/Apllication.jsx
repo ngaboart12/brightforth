@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Step1 from "../components/Step1";
-import Step2 from "../components/Step2";
-import Step3 from "../components/Step3";
-import Step4 from "../components/Step4";
-import Step5 from "../components/Step5";
+import Step1 from "../components/application/Step1";
+import Step2 from "../components/application/Step2";
+import Step3 from "../components/application/Step3";
+import Step4 from "../components/application/Step4";
+import Step5 from "../components/application/Step5";
 import { css } from "@emotion/react";
 import { ClipLoader } from "react-spinners";
 
 import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase";
+import Navbar from "../components/Navbar";
+import LinkComponent from "../components/LinkComponet";
+import Footer2 from "../components/Footer2";
 
 const override = css`
   display: block;
@@ -318,69 +321,75 @@ const Apllication = () => {
   };
 
   return (
-    <div className="flex w-full flex-col items-center justify-center">
-      <div className="py-[12px] w-1/2 flex items-center justify-center bg-[#07294D] rounded-md">
-        <span className="text-white text-[20px] font-[300]">Application</span>
-      </div>
-      <form
-        onSubmit={handelSubmit}
-        className="pt-4 w-full items-center justify-center"
-      >
-        {step === 1 && (
-          <Step1 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 2 && (
-          <Step2 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 3 && (
-          <Step3 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 4 && (
-          <Step4 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 5 && (
-          <Step5
-            filesImage={filesImage}
-            filesInputHandel={filesInputHandel}
-            handleInputChange={handleInputChange}
-          />
-        )}
-        <div className="flex  gap-2  py-2 justify-end px-10">
-          {step > 1 && (
-            <div
-              onClick={handlePrev}
-              className="py-2 px-10 bg-gray-400 rounded-md"
-            >
-              Back
-            </div>
-          )}
-          {step < 5 && (
-            <div
-              onClick={handleNext}
-              className="py-2 px-10 bg-[#FFCD21] rounded-md"
-            >
-              next
-            </div>
-          )}
-          {step == 5 && (
-            <button
-              className="py-2 px-10 bg-[#FFCD21] rounded-md"
-              type="submit"
-            >
-              submit
-            </button>
-          )}
+    <div>
+      <LinkComponent />
+      <Navbar />
+
+      <div className="px-[100px] flex w-full flex-col items-center justify-center">
+        <div className="py-[12px] w-1/2 flex items-center justify-center bg-[#07294D] rounded-md">
+          <span className="text-white text-[20px] font-[300]">Application</span>
         </div>
+        <form
+          onSubmit={handelSubmit}
+          className="pt-4 w-full items-center justify-center"
+        >
+          {step === 1 && (
+            <Step1 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 2 && (
+            <Step2 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 3 && (
+            <Step3 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 4 && (
+            <Step4 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 5 && (
+            <Step5
+              filesImage={filesImage}
+              filesInputHandel={filesInputHandel}
+              handleInputChange={handleInputChange}
+            />
+          )}
+          <div className="flex  gap-2  py-2 justify-end px-10">
+            {step > 1 && (
+              <div
+                onClick={handlePrev}
+                className="py-2 px-10 bg-gray-400 rounded-md"
+              >
+                Back
+              </div>
+            )}
+            {step < 5 && (
+              <div
+                onClick={handleNext}
+                className="py-2 px-10 bg-[#FFCD21] rounded-md"
+              >
+                next
+              </div>
+            )}
+            {step == 5 && (
+              <button
+                className="py-2 px-10 bg-[#FFCD21] rounded-md"
+                type="submit"
+              >
+                submit
+              </button>
+            )}
+          </div>
 
-        <ClipLoader
-          color="#36D7B7"
-          loading={loading}
-          css={override}
-          size={50}
-        />
+          <ClipLoader
+            color="#36D7B7"
+            loading={loading}
+            css={override}
+            size={50}
+          />
 
-        {loading && <p>Uploading...</p>}
-      </form>
+          {loading && <p>Uploading...</p>}
+        </form>
+      </div>
+      <Footer2 />
     </div>
   );
 };

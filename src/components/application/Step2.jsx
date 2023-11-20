@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Input from "./Input";
+import Input from "../Input";
 
 const Step2 = ({ formData, handleInputChange }) => {
   const [countryName, setCountryName] = useState("");

@@ -6,6 +6,9 @@ import Ass4 from "../components/assessement/Ass4";
 import Asss5 from "../components/assessement/Asss5";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
+import Navbar from "../components/Navbar";
+import LinkComponent from "../components/LinkComponet";
+import Footer2 from "../components/Footer2";
 
 const Assessment = () => {
   const [step, setStep] = useState(1);
@@ -147,55 +150,60 @@ const Assessment = () => {
   };
 
   return (
-    <div className="flex flex-col px-4 blg:px-40">
-      <form
-        action=""
-        onSubmit={handleFormSubmit}
-        className="flex flex-col gap-2"
-      >
-        {step === 1 && (
-          <Ass1 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 2 && (
-          <Ass2 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 3 && (
-          <Ass3 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 4 && (
-          <Ass4 formData={formData} handleInputChange={handleInputChange} />
-        )}
-        {step === 5 && (
-          <Asss5 formData={formData} handleInputChange={handleInputChange} />
-        )}
+    <div>
+      <LinkComponent />
+      <Navbar />
+      <div className="px-[100px] flex flex-col  blg:px-[20vh]">
+        <form
+          action=""
+          onSubmit={handleFormSubmit}
+          className="flex flex-col gap-2"
+        >
+          {step === 1 && (
+            <Ass1 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 2 && (
+            <Ass2 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 3 && (
+            <Ass3 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 4 && (
+            <Ass4 formData={formData} handleInputChange={handleInputChange} />
+          )}
+          {step === 5 && (
+            <Asss5 formData={formData} handleInputChange={handleInputChange} />
+          )}
 
-        <div className="flex  gap-2  py-2 justify-end px-10">
-          {step > 1 && (
-            <div
-              onClick={handlePrev}
-              className="py-2 px-10 bg-gray-400 rounded-md"
-            >
-              Back
-            </div>
-          )}
-          {step < 5 && (
-            <div
-              onClick={handleNext}
-              className="py-2 px-10 bg-[#FFCD21] rounded-md"
-            >
-              next
-            </div>
-          )}
-          {step == 5 && (
-            <button
-              className="py-2 px-10 bg-[#FFCD21] rounded-md"
-              type="submit"
-            >
-              submit
-            </button>
-          )}
-        </div>
-      </form>
+          <div className="flex  gap-2  py-2 justify-end px-10">
+            {step > 1 && (
+              <div
+                onClick={handlePrev}
+                className="py-2 px-10 bg-gray-400 rounded-md"
+              >
+                Back
+              </div>
+            )}
+            {step < 5 && (
+              <div
+                onClick={handleNext}
+                className="py-2 px-10 bg-[#FFCD21] rounded-md"
+              >
+                next
+              </div>
+            )}
+            {step == 5 && (
+              <button
+                className="py-2 px-10 bg-[#FFCD21] rounded-md"
+                type="submit"
+              >
+                submit
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+      <Footer2 />
     </div>
   );
 };

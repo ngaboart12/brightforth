@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Input from "./Input";
+import Input from "../Input";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 
 const Step5 = ({ filesImage, filesInputHandel, handleInputChange }) => {
   const [faculties, setFaculties] = useState([]);

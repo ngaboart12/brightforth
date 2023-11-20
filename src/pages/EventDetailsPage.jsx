@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import LinkComponent from "../components/LinkComponet";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const EventDetailsPage = () => {
   const { eventId } = useParams();
@@ -28,28 +31,34 @@ const EventDetailsPage = () => {
   }, [eventId]);
 
   return (
-    <div className="py-4">
-      {additionalPicturesURLs.length > 0 ? (
-        <div className="w-full gap-4 flex flex-col">
-          <h1 className="text-[26px] font-[600]">{eventData.eventName}</h1>
+    <div>
+      <LinkComponent />
+      <Navbar />
 
-          <div className="grid grid-cols-4 gap-y-6 gap-x-10">
-            {additionalPicturesURLs.map((url, index) => (
-              <div className="flex min-w-[200px] h-60">
-                <img
-                  key={index}
-                  src={url.url}
-                  alt={`Additional Photo ${index + 1}`}
-                  style={{ maxWidth: "100%" }}
-                  className="w-full h-full object-cover rounded-md"
-                />
-              </div>
-            ))}
+      <div className="py-4">
+        {additionalPicturesURLs.length > 0 ? (
+          <div className="w-full gap-4 flex flex-col">
+            <h1 className="text-[26px] font-[600]">{eventData.eventName}</h1>
+
+            <div className="grid grid-cols-4 gap-y-6 gap-x-10">
+              {additionalPicturesURLs.map((url, index) => (
+                <div className="flex min-w-[200px] h-60">
+                  <img
+                    key={index}
+                    src={url.url}
+                    alt={`Additional Photo ${index + 1}`}
+                    style={{ maxWidth: "100%" }}
+                    className="w-full h-full object-cover rounded-md"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ) : (
-        <p>No additional pictures available for this event.</p>
-      )}
+        ) : (
+          <p>No additional pictures available for this event.</p>
+        )}
+      </div>
+      <Footer />
     </div>
   );
 };

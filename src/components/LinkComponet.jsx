@@ -1,6 +1,6 @@
 import React from "react";
 
-const LinkComponent = () => {
+const LinkComponent2 = () => {
   return (
     <div className="px-[10px] md:px-[100px] py-2 flex flex-col md:flex-row justify-between items-center">
       <div className="flex gap-10 blg:gap-20 items-center">
@@ -134,4 +134,4 @@ const LinkComponent = () => {
   );
 };
 
-export default LinkComponent;
+export default LinkComponent2;
