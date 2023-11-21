@@ -12,6 +12,7 @@ import Gallery from "./pages/Gallery";
 import EventDetailsPage from "./pages/EventDetailsPage";
 import Footer2 from "./components/Footer2";
 import Home from "./pages/Home";
+import StudyInPoland from "./pages/StudyInPoland";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +21,7 @@ function App() {
     <div className=" w-full overflow-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/poland" element={<StudyInPoland />} />
         <Route path="/app" element={<Apllication />} />
         <Route path="/ass" element={<Assessment />} />
 

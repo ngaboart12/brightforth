@@ -10,7 +10,7 @@ const Navbar2 = () => {
       </div>
 
       <div className="links flex gap-[102px] items-center mt-2">
-        <ul className="hidden md:flex text-white font-[100] text-[12px]  gap-4  items-center">
+        <ul className="hidden md:flex text-white font-[300] text-[12px]  gap-4  items-center">
           <li>
             <a href="/">HOME</a>
           </li>
@@ -35,9 +35,11 @@ const Navbar2 = () => {
                 </svg>
               </span>
             </a>
-            <ul>
+            <ul className="text-[black] gap-4 text-[16px]">
               <li>
-                <a href="">heee</a>
+                <a href="" className="hover:text-black/70">
+                  heee
+                </a>
               </li>
               <li>
                 <a href="">heee</a>
@@ -65,6 +67,19 @@ const Navbar2 = () => {
                 </svg>
               </span>
             </a>
+            <ul className="text-[black] gap-4 text-[16px]">
+              <li>
+                <a href="" className="hover:text-black/70">
+                  Canada
+                </a>
+              </li>
+              <li>
+                <a href="/poland">Poland</a>
+              </li>
+              <li>
+                <a href="">China</a>
+              </li>
+            </ul>
           </li>
           <li>
             <a href="/" className=" flex gap-1 items-center">

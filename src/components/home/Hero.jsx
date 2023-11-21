@@ -20,7 +20,7 @@ const Hero = () => {
         <h1 className="text-white text-[40px]  leading-[40px] text-center max-w-[551px] md:leading-[40px] ">
           Welcome To BrightForth Your Career Partner
         </h1>
-        <p className="text-center text-[16px] text-[#fff] max-w-[433px] font-extralight">
+        <p className="text-center text-[16px] text-[#fff] max-w-[433px] font-[300]">
           Welcome To BrightForthYour Career Partner Contact us for a free
           consultation Because we are leading educational consultant popularly
           recognized
