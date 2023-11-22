@@ -716,12 +716,12 @@ const Home = () => {
         <div className="w-full relative">
           <Swiper ref={swiperRef} {...swiperOptions}>
             {countries.map((country, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex flex-col items-center">
+              <SwiperSlide key={index} className="w-[200px] h-[300px] py-4">
+                <div className="flex flex-col items-center  w-[200px] h-[250px]">
                   <img
                     src={country.imageSrc}
                     alt={`Flag of ${country.name}`}
-                    className="max-w-1/2 h-auto"
+                    className="w-full h-full object-cover rounded-md"
                   />
                   <p className="mt-2 text-lg font-semibold">{country.name}</p>
                 </div>

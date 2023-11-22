@@ -13,6 +13,7 @@ import EventDetailsPage from "./pages/EventDetailsPage";
 import Footer2 from "./components/Footer2";
 import Home from "./pages/Home";
 import StudyInPoland from "./pages/StudyInPoland";
+import StudyInCanada from "./pages/StudyInCanada";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/poland" element={<StudyInPoland />} />
+        <Route path="/canada" element={<StudyInCanada />} />
         <Route path="/app" element={<Apllication />} />
         <Route path="/ass" element={<Assessment />} />
 
