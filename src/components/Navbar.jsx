@@ -15,7 +15,7 @@ const Navbar = () => {
             <a href="/">HOME</a>
           </li>
           <li>
-            <a href="/about us">ABOUT US</a>
+            <a href="/aboutus">ABOUT US</a>
           </li>
           <li>
             <a href="/" className=" flex gap-1 items-center">
@@ -69,7 +69,7 @@ const Navbar = () => {
             </a>
             <ul className="text-[black] gap-4 text-[16px]">
               <li>
-                <a href="" className="hover:text-black/70">
+                <a href="/canada" className="hover:text-black/70">
                   Canada
                 </a>
               </li>
