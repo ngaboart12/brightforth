@@ -83,7 +83,7 @@ const Footer2 = () => {
           <h1 className="font-[900] text-[#FFA800]">Quick Links</h1>
           <a href="">About us</a>
           <a href="">Offers</a>
-          <a href="" className="flex gap-1 items-center">
+          <a href="/ass" className="flex gap-1 items-center">
             Assessment{" "}
             <svg
               width="24"
@@ -98,7 +98,7 @@ const Footer2 = () => {
               />
             </svg>
           </a>
-          <a href="" className="flex gap-1 items-center">
+          <a href="/app" className="flex gap-1 items-center">
             Apply now{" "}
             <svg
               width="24"

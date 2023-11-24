@@ -27,7 +27,7 @@ const Hero = () => {
         </p>
         <div className="flex gap-4">
           <a
-            href="/"
+            href="/app"
             className="text-white items-center bg-[#FFA800] hover:bg-[#FFA800]/80 py-[16px] px-[20px] md:px-[40px] rounded-2xl"
           >
             Apply now

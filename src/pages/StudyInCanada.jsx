@@ -1244,7 +1244,7 @@ const StudyInCanada = () => {
 
       {/* can i change school or program */}
 
-      <div class="max-w-7xl w-fulll  flex-col justify-start items-center gap-10 inline-flex mt-10">
+      <div class="max-w-7xl w-fulll px-[20px]  flex-col justify-start items-center gap-10 inline-flex mt-10">
         <div class="justify-start items-center gap-10 flex flex-col md:flex-row">
           <div class="max-w-[456px] text-sky-950 text-[24px] md:text-[32px] font-bold font-['Outfit']">
             Can I Change Schools or Programs While on a Study Permit?
@@ -1454,37 +1454,6 @@ const StudyInCanada = () => {
                 You can learn more about applying for a study permit with your
                 family here.
               </span>
-            </div>
-          </div>
-          <div class="left-[-87px] top-[503px] absolute justify-start items-start gap-6 inline-flex">
-            <div class="pl-12 pr-[47px] pt-[57px] pb-[51px] bg-stone-50 justify-center items-center flex">
-              <div class="self-stretch flex-col justify-start items-start gap-6 inline-flex">
-                <div class="text-center text-sky-950 text-2xl font-bold font-['Outfit']">
-                  McGill University
-                </div>
-                <div class="max-w-[398px]  text-black text-lg font-normal font-['Outfit']">
-                  McGill has an international reputation for excellence. It's no
-                  wonder it has a population of more than 12,000 international
-                  students. Although it is in the French province of Quebec,
-                  McGill is an English university. The city of Montreal is known
-                  as one of the best cities to live in as a student. The cost of
-                  living is low and it is home to a vibrant artistic and
-                  cultural scene.
-                </div>
-              </div>
-            </div>
-            <div class="pl-12 pr-[47px] pt-[52px] pb-[122px] bg-stone-50 justify-center items-center flex">
-              <div class="self-stretch flex-col justify-start items-start gap-6 inline-flex">
-                <div class="text-center text-sky-950 text-2xl font-bold font-['Outfit']">
-                  Université de Montreal (UdeM)
-                </div>
-                <div class="max-w-[398px]  text-black text-lg font-normal font-['Outfit']">
-                  UdeM is one of Canada’s highest ranking universities, and a
-                  great option for those interested in studying in French!
-                  Located in the city of Montreal, UdeM and its affiliate
-                  schools serve 9,500 international students each year.
-                </div>
-              </div>
             </div>
           </div>
         </div>

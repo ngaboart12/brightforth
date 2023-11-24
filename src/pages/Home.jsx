@@ -716,8 +716,8 @@ const Home = () => {
         <div className="w-full relative">
           <Swiper ref={swiperRef} {...swiperOptions}>
             {countries.map((country, index) => (
-              <SwiperSlide key={index} className="w-[200px] h-[300px] py-4">
-                <div className="flex flex-col items-center  w-[200px] h-[250px]">
+              <SwiperSlide key={index} className="w-[300px] h-[300px] py-4">
+                <div className="flex flex-col items-center  w-[300px] h-[250px]">
                   <img
                     src={country.imageSrc}
                     alt={`Flag of ${country.name}`}
@@ -1211,8 +1211,14 @@ const Home = () => {
               <a href="#" className="text-white text-[14px] font-[300]">
                 Contact us
               </a>
-              <a href="#" className="text-white text-[14px] font-[300]">
+              <a href="/gallery" className="text-white text-[14px] font-[300]">
                 Gallery
+              </a>
+              <a href="/app" className="text-white text-[14px] font-[300]">
+                Aplly now
+              </a>
+              <a href="/ass" className="text-white text-[14px] font-[300]">
+                Assessment
               </a>
             </div>
           </div>
