@@ -1489,6 +1489,11 @@ const StudyInCanada = () => {
           </div>
         </div>
       </div>
+
+      {/* can my spouse */}
+      <div className="w-full px-[20px] md:px-40  flex flex-col md:flex-row">
+        <div className="flex flex-col gap-6"></div>
+      </div>
     </div>
   );
 };

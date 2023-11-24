@@ -153,7 +153,7 @@ const Assessment = () => {
     <div>
       <LinkComponent />
       <Navbar />
-      <div className="px-[100px] flex flex-col  blg:px-[20vh]">
+      <div className="px-[20px] md:px-[100px] flex flex-col  blg:px-[20vh]">
         <form
           action=""
           onSubmit={handleFormSubmit}

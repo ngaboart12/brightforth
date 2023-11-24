@@ -70,47 +70,47 @@ const StudyInPoland = () => {
 
       {/* benefit of studying in poland */}
       <div className="w-full py-20 items-center max-w-7xl">
-        <div class="w-full  px-[89px]  pt-[58px] py-[59px] bg-sky-950 flex-col justify-center items-start gap-[51px] inline-flex">
-          <div class="self-stretch justify-start items-start gap-[42px] inline-flex">
-            <div class="w-[567px] text-amber-500 text-[32px] font-bold font-['Outfit']">
-              Benefits of Studying in Poland
-            </div>
-            <div class="max-w-[499px] text-white text-lg font-[300] font-['Outfit']">
-              International students opt to study in Poland for a variety of
-              reasons. Some of the world’s oldest, best higher education
-              institutions are located in Poland. The following perks are
-              available to international students who look forward to enrolling
-              in various programmes at one of the Polish universities.
-            </div>
+        <div class="w-full px-[20px]  md:px-[89px]  pt-[58px] py-[59px] bg-sky-950 flex-col justify-center items-center gap-[51px] inline-flex">
+          <div class="max-w-[567px] text-amber-500 text-[32px] font-bold font-['Outfit']">
+            Benefits of Studying in Poland
           </div>
-          <div class="self-stretch justify-start items-start gap-[83px] inline-flex">
-            <div class="flex-col justify-start items-start gap-6 inline-flex">
-              <div class="max-w-[526px] text-white text-lg font-[300] font-['Outfit']">
+
+          <div class="max-w-[799px] text-center md:text-start text-white text-lg font-[300] font-['Outfit']">
+            International students opt to study in Poland for a variety of
+            reasons. Some of the world’s oldest, best higher education
+            institutions are located in Poland. The following perks are
+            available to international students who look forward to enrolling in
+            various programmes at one of the Polish universities.
+          </div>
+
+          <div class="self-stretch justify-start items-start gap-[83px] flex flex-col md:flex-row">
+            <div class="flex-col flex justify-start items-start gap-6">
+              <div class=" text-center md:text-start text-white text-lg font-[300] font-['Outfit']">
                 Most students from salaried class families would benefit from
                 low tuition fees and living expenses.
               </div>
-              <div class="max-w-[526px] text-white text-lg font-[300] font-['Outfit']">
+              <div class=" text-center md:text-start text-white text-lg font-[300] font-['Outfit']">
                 Simple & straightforward visa application processes.
               </div>
-              <div class="max-w-[526px] text-white text-lg font-[300] font-['Outfit']">
+              <div class=" text-center md:text-start text-white text-lg font-[300] font-['Outfit']">
                 Other European nations like Germany, Denmark etc., are easily
                 accessible because Poland belongs to the Schengen group of
                 countries within the European Union.
               </div>
             </div>
             <div class="flex-col justify-start  gap-[34px] inline-flex">
-              <div class="max-w-[526px] text-white text-lg font-[300] font-['Outfit']">
+              <div class=" text-white text-center md:text-start text-lg font-[300] font-['Outfit']">
                 Opportunities for internships and transfers to other European
                 universities without additional cost through the Erasmus+
                 programme.
               </div>
-              <div class="max-w-[526px] text-white text-lg font-[300] font-['Outfit']">
+              <div class=" text-white text-center md:text-start text-lg font-[300] font-['Outfit']">
                 Low Crime Rate Worldwide.
               </div>
-              <div class="max-w-[526px] text-white text-lg font-[300] font-['Outfit']">
+              <div class=" text-white text-center md:text-start text-lg font-[300] font-['Outfit']">
                 Every significant city in Poland has a university.
               </div>
-              <div class="max-w-[526px] text-white text-lg font-[300] font-['Outfit']">
+              <div class="max-w-[526px] text-white text-center md:text-start text-lg font-[300] font-['Outfit']">
                 Scholarships options for non-EU students!
               </div>
             </div>
@@ -1150,10 +1150,10 @@ const StudyInPoland = () => {
       </div>
 
       {/* some questions */}
-      <div class="w-full px-[146px]  py-[57px] mt-20  bg-sky-950  items-center flex justify-center">
+      <div class="w-full px-[20px] md:px-[146px]  py-[57px] mt-20  bg-sky-950  items-center flex justify-center">
         <div class="self-stretch justify-start items-start gap-[60px] flex flex-col md:flex-row">
           <div class="flex-col md:w-1/2 justify-center md:justify-start items-center md:items-start  w-full gap-6 inline-flex">
-            <div class="p-4 bg-sky-900 rounded-lg flex-col justify-start items-start gap-2.5 flex">
+            <div class="p-4 w-full bg-sky-900 rounded-lg flex-col justify-start items-start gap-2.5 flex">
               <div class="justify-start items-center gap-4 inline-flex">
                 <div class="max-w-[408px]  text-white text-lg font-normal font-['Outfit']">
                   Can international students work part-time in Poland while they
@@ -1162,7 +1162,7 @@ const StudyInPoland = () => {
                 <div class="w-6 h-6 relative origin-top-left -rotate-90"></div>
               </div>
             </div>
-            <div class="p-4 bg-sky-900 rounded-lg flex-col justify-start items-start gap-2.5 flex">
+            <div class="p-4  w-full bg-sky-900 rounded-lg flex-col justify-start items-start gap-2.5 flex">
               <div class="justify-start items-end gap-4 inline-flex">
                 <div class="max-w-[408px]  text-white text-lg font-normal font-['Outfit']">
                   Do I have to speak Polish?
@@ -1170,7 +1170,7 @@ const StudyInPoland = () => {
                 <div class="w-6 h-6 relative"></div>
               </div>
             </div>
-            <div class="p-4 bg-sky-900 rounded-lg flex-col justify-start items-start gap-2.5 flex">
+            <div class="p-4 w-full bg-sky-900 rounded-lg flex-col justify-start items-start gap-2.5 flex">
               <div class="justify-start items-center gap-4 inline-flex">
                 <div class="max--w-[408px]  text-white text-lg font-normal font-['Outfit']">
                   How can you explore a Polish city?
