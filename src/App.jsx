@@ -15,6 +15,8 @@ import Home from "./pages/Home";
 import StudyInPoland from "./pages/StudyInPoland";
 import StudyInCanada from "./pages/StudyInCanada";
 import Aboutus from "./pages/Aboutus";
+import StudyInChina from "./pages/StudyInChina";
+import SpecialOffers from "./pages/SpecialOffers";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,7 +27,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/poland" element={<StudyInPoland />} />
+        <Route path="/specialoffer" element={<SpecialOffers />} />
         <Route path="/canada" element={<StudyInCanada />} />
+        <Route path="/china" element={<StudyInChina />} />
         <Route path="/app" element={<Apllication />} />
         <Route path="/ass" element={<Assessment />} />
 

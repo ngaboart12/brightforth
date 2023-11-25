@@ -77,7 +77,7 @@ const Navbar = () => {
                 <a href="/poland">Poland</a>
               </li>
               <li>
-                <a href="">China</a>
+                <a href="/china">China</a>
               </li>
             </ul>
           </li>

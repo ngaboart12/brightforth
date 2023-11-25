@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import LinkComponent from "../components/LinkComponet";
+import Footer2 from "../components/Footer2";
 
 const StudyInCanada = () => {
   return (
@@ -1460,9 +1461,230 @@ const StudyInCanada = () => {
       </div>
 
       {/* can my spouse */}
-      <div className="w-full px-[20px] md:px-40  flex flex-col md:flex-row">
-        <div className="flex flex-col gap-6"></div>
+      <div class="max-w-7xl w-full px-[20px] py-10 md:px-40 justify-start items-start gap-6 flex flex-col md:flex-row">
+        <div class="md:pl-[30px] pr-[29px] pt-[57px] bg-stone-50 justify-center items-center flex">
+          <div class="self-stretch flex-col justify-center items-center md:items-start gap-6 inline-flex">
+            <div class="max-w-[434px] text-sky-950 text-2xl font-bold font-['Outfit']">
+              Can My Spouse <br />
+              Work While I am Studying in Canada?
+            </div>
+            <div class="max-w-[398px] ">
+              <span className="text-black text-lg font-normal font-['Outfit']">
+                If your family does accompany you, your spouse will be eligible
+                for an{" "}
+              </span>
+              <span className="text-black text-lg font-normal font-['Outfit'] underline">
+                open work permit
+              </span>
+              <span className="text-black text-lg font-normal font-['Outfit']">
+                , authorizing them to work full-time in Canada while you are
+                studying.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class=" md:pl-12 pr-[47px] pt-[52px] pb-[73px] bg-stone-50 justify-center items-center flex">
+          <div class="self-stretch flex-col justify-start items-start gap-6 inline-flex">
+            <div class="max-w-[335px] text-sky-950 text-2xl font-bold font-['Outfit']">
+              Can I Study in Quebec?
+            </div>
+            <div class="max-w-[398px] h-[109px] text-black text-lg font-normal font-['Outfit']">
+              Studying in Quebec gives you the option to study in English,
+              French, or both. However, Quebec student visa requirements are a
+              little different from the rest of Canada.
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* what are the requirement */}
+      <div class="max-w-7xl w-full px-[20px] py-10 md:px-40 flex-col justify-start items-center gap-12 inline-flex">
+        <div class="max-w-[571px] text-[24px] text-center text-sky-950 md:text-[32px] font-bold font-['Outfit']">
+          What Are <br />
+          the Requirements to Study in Quebec?
+        </div>
+        <div class="flex-col justify-start items-start gap-8 flex">
+          <div class="justify-start w-full  items-start gap-[43px] flex flex-col md:flex-row">
+            <div class="max-w-[393px] ">
+              <span className="text-neutral-700 text-lg font-normal font-['Outfit']">
+                In order to study in Quebec, you will need a{" "}
+              </span>
+              <span className="text-neutral-700 text-lg font-normal font-['Outfit'] underline">
+                Quebec Acceptance Certificate (CAQ)
+              </span>
+              <span className="text-neutral-700 text-lg font-normal font-['Outfit']">
+                . This document is issued by the
+              </span>
+              <span className="text-neutral-700 text-lg font-normal font-['Outfit'] underline">
+                {" "}
+                Ministry of Immigration, Francisation and Integration (MIFI)
+              </span>
+              <span className="text-neutral-700 text-lg font-normal font-['Outfit']">
+                . It confirms that Quebec has accepted you as an international
+                student. You need a CAQ before you can apply for a study permit
+                if your program of study is in Québec.
+              </span>
+            </div>
+            <div class="flex-col justify-start items-start gap-[21px] inline-flex">
+              <div class="max-w-[493px]  text-sky-950 text-lg font-normal font-['Outfit']">
+                To be eligible to apply for a CAQ, you need to meet the
+                following requirements.
+              </div>
+              <div class="flex-col justify-start items-start gap-4 flex">
+                <div class="justify-start items-center gap-4 inline-flex">
+                  <div class="w-6  relative">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.4"
+                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                        fill="#07294D"
+                      />
+                      <path
+                        d="M10.5795 15.5806C10.3795 15.5806 10.1895 15.5006 10.0495 15.3606L7.21945 12.5306C6.92945 12.2406 6.92945 11.7606 7.21945 11.4706C7.50945 11.1806 7.98945 11.1806 8.27945 11.4706L10.5795 13.7706L15.7195 8.63059C16.0095 8.34059 16.4895 8.34059 16.7795 8.63059C17.0695 8.92059 17.0695 9.40059 16.7795 9.69059L11.1095 15.3606C10.9695 15.5006 10.7795 15.5806 10.5795 15.5806Z"
+                        fill="#07294D"
+                      />
+                    </svg>
+                  </div>
+                  <div class="max-w-[493px]  text-neutral-700 text-lg font-normal font-['Outfit']">
+                    Be accepted into a Québec designated learning institution
+                  </div>
+                </div>
+                <div class="justify-start items-center gap-4 inline-flex">
+                  <div class="w-6 h-6 relative">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.4"
+                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                        fill="#07294D"
+                      />
+                      <path
+                        d="M10.5795 15.5806C10.3795 15.5806 10.1895 15.5006 10.0495 15.3606L7.21945 12.5306C6.92945 12.2406 6.92945 11.7606 7.21945 11.4706C7.50945 11.1806 7.98945 11.1806 8.27945 11.4706L10.5795 13.7706L15.7195 8.63059C16.0095 8.34059 16.4895 8.34059 16.7795 8.63059C17.0695 8.92059 17.0695 9.40059 16.7795 9.69059L11.1095 15.3606C10.9695 15.5006 10.7795 15.5806 10.5795 15.5806Z"
+                        fill="#07294D"
+                      />
+                    </svg>
+                  </div>
+                  <div class="max-w-[493px]  text-neutral-700 text-lg font-normal font-['Outfit']">
+                    Pay the fees associated with a CAQ application
+                  </div>
+                </div>
+                <div class="justify-start items-center gap-4 inline-flex">
+                  <div class="w-6 h-6 relative">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        opacity="0.4"
+                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                        fill="#07294D"
+                      />
+                      <path
+                        d="M10.5795 15.5806C10.3795 15.5806 10.1895 15.5006 10.0495 15.3606L7.21945 12.5306C6.92945 12.2406 6.92945 11.7606 7.21945 11.4706C7.50945 11.1806 7.98945 11.1806 8.27945 11.4706L10.5795 13.7706L15.7195 8.63059C16.0095 8.34059 16.4895 8.34059 16.7795 8.63059C17.0695 8.92059 17.0695 9.40059 16.7795 9.69059L11.1095 15.3606C10.9695 15.5006 10.7795 15.5806 10.5795 15.5806Z"
+                        fill="#07294D"
+                      />
+                    </svg>
+                  </div>
+                  <div class="max-w-[493px]  text-neutral-700 text-lg font-normal font-['Outfit']">
+                    Agree to comply with the conditions for issuing a CAQ for
+                    studies
+                    <br />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2  text-center text-neutral-700 text-lg font-normal font-['Outfit']">
+            You do not need a CAQ or a study permit if you intend to study a
+            program that is less than 6 months in duration.
+            <br />
+            <br />
+            Once you have a CAQ, you have to apply for a study permit from the
+            Government of Canada. When you receive your study permit, you’re
+            ready to start studying in Canada!
+          </div>
+        </div>
+      </div>
+
+      {/* are international students */}
+      <div class="w-full max-w-7xl px-[20px] py-10 md:px-40 flex-col justify-start items-start gap-8 inline-flex">
+        <div class="max-w-[571px] text-[24px] text-sky-950 md:text-[32px] font-bold font-['Outfit']">
+          Are International Students Covered by Canada’s Healthcare System?
+        </div>
+        <div class="max-w-[1053px] ">
+          <span className="text-neutral-700 text-lg font-normal font-['Outfit']">
+            All international students in Canada must have healthcare coverage.
+            <br />
+            Certain provinces allow international students access to Canada’s
+            public healthcare system. Students in
+          </span>
+          <span className="text-neutral-700 text-lg font-normal font-['Outfit'] underline">
+            {" "}
+            provinces that do not offer health coverage
+          </span>
+          <span className="text-neutral-700 text-lg font-normal font-['Outfit']">
+            {" "}
+            must buy private health insurance. All Canadian schools offer health
+            insurance plans for international students.
+          </span>
+        </div>
+      </div>
+
+      {/* can i stay in  canada */}
+      <div className="w-full max-w-7xl flex flex-col py-20">
+        <div class=" text-center text-sky-950 text-[32px] font-bold font-['Outfit']">
+          Can I Stay in
+          <br /> Canada After I Graduate?
+        </div>
+        <div class="max-w-full flex-col justify-start items-center gap-6 inline-flex">
+          <div class="max-w-[1010px]  text-center text-zinc-800 text-lg font-normal font-['Outfit']">
+            Canada makes it easy for international students to become permanent
+            residents if they want to remain in the country.
+          </div>
+          <div class="max-w-[1010px] text-center">
+            <span className="text-zinc-800 text-lg font-normal font-['Outfit']">
+              The
+            </span>
+            <span className="text-zinc-800 text-lg font-normal font-['Outfit'] underline">
+              {" "}
+              Post-Graduate Work Permit
+            </span>
+            <span className="text-zinc-800 text-lg font-normal font-['Outfit']">
+              {" "}
+              allows international students to stay in Canada and work for up to
+              three years after graduating. After working in Canada for one
+              year, international graduates may be eligible to apply for
+              permanent residency.
+            </span>
+          </div>
+          <div class="max-w-[1010px] text-center text-zinc-800 text-lg font-normal font-['Outfit']">
+            To apply for a PGWP, you need to prove that you have respected all
+            the conditions of your study permit. Studying must have been your
+            primary activity during your time in Canada.
+          </div>
+          <div class="max-w-[1010px] text-center text-zinc-800 text-lg font-normal font-['Outfit']">
+            A PGWP is typically granted for the same duration as your studies in
+            Canada.
+          </div>
+        </div>
+      </div>
+
+      {/* footer */}
+      <Footer2 />
     </div>
   );
 };
