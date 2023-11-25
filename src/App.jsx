@@ -17,6 +17,8 @@ import StudyInCanada from "./pages/StudyInCanada";
 import Aboutus from "./pages/Aboutus";
 import StudyInChina from "./pages/StudyInChina";
 import SpecialOffers from "./pages/SpecialOffers";
+import Toefl from "./pages/Toefl";
+import Sop from "./pages/Sop";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +30,8 @@ function App() {
         <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/poland" element={<StudyInPoland />} />
         <Route path="/specialoffer" element={<SpecialOffers />} />
+        <Route path="/toefl" element={<Toefl />} />
+        <Route path="/sop" element={<Sop />} />
         <Route path="/canada" element={<StudyInCanada />} />
         <Route path="/china" element={<StudyInChina />} />
         <Route path="/app" element={<Apllication />} />
