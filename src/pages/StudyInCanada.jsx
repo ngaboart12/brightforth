@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import LinkComponent from "../components/LinkComponet";
 import Footer2 from "../components/Footer2";
+import Footer from "../components/Footer";
 
 const StudyInCanada = () => {
   return (
@@ -1684,7 +1685,7 @@ const StudyInCanada = () => {
       </div>
 
       {/* footer */}
-      <Footer2 />
+      <Footer />
     </div>
   );
 };

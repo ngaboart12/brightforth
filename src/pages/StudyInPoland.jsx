@@ -12,6 +12,7 @@ import topu2 from "../assets/topu2.png";
 import topumain from "../assets/topumain.png";
 import acom1 from "../assets/acom1.png";
 import acom2 from "../assets/acom2.png";
+import Footer from "../components/Footer";
 
 const StudyInPoland = () => {
   return (
@@ -1191,7 +1192,7 @@ const StudyInPoland = () => {
 
       {/* footer */}
       <div className="w-full pt-40">
-        <Footer2 />
+        <Footer />
       </div>
     </div>
   );

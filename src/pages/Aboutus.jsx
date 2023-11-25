@@ -1,6 +1,6 @@
 import React from "react";
 import LinkComponent from "../components/LinkComponet";
-import Footer2 from "../components/Footer2";
+
 import Navbar from "../components/Navbar";
 import member1 from "../assets/member1.png";
 import member2 from "../assets/member2.png";
@@ -9,6 +9,7 @@ import member4 from "../assets/member4.png";
 
 import about from "../assets/about.png";
 import Parteners from "../components/Parteners";
+import Footer from "../components/Footer";
 
 const Aboutus = () => {
   const members = [
@@ -253,7 +254,7 @@ const Aboutus = () => {
       {/* parteners */}
       <Parteners />
 
-      <Footer2 />
+      <Footer />
     </div>
   );
 };

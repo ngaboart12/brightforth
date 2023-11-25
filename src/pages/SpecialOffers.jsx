@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import LinkComponent from "../components/LinkComponet";
 import specialpic from "../assets/special.png";
 import Footer2 from "../components/Footer2";
+import Footer from "../components/Footer";
 
 const SpecialOffers = () => {
   return (
@@ -511,7 +512,7 @@ const SpecialOffers = () => {
 
       {/* footer */}
 
-      <Footer2 />
+      <Footer />
     </div>
   );
 };

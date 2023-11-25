@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import toelPic from "../assets/toefl.png";
 import Parteners from "../components/Parteners";
 import Footer2 from "../components/Footer2";
+import Footer from "../components/Footer";
 
 const Toefl = () => {
   return (
@@ -396,7 +397,7 @@ const Toefl = () => {
       <Parteners />
 
       {/* footer */}
-      <Footer2 />
+      <Footer />
     </div>
   );
 };

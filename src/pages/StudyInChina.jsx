@@ -2,6 +2,7 @@ import React from "react";
 import LinkComponent from "../components/LinkComponet";
 import Navbar from "../components/Navbar";
 import Footer2 from "../components/Footer2";
+import Footer from "../components/Footer";
 
 const StudyInChina = () => {
   return (
@@ -498,7 +499,7 @@ const StudyInChina = () => {
       </div>
 
       {/* footer */}
-      <Footer2 />
+      <Footer />
     </div>
   );
 };
