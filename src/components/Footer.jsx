@@ -8,8 +8,8 @@ import dp5 from "../assets/dp5.svg";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col gap-12 bg-[#07294D] pt-10 w-full">
-      <div className=" p-2 gap-6 sm:gap-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full  justify-center sm:p-6">
+    <div className="flex flex-col gap-12 bg-[#07294D] pt-10 w-full items-center">
+      <div className=" max-w-7xl p-2 gap-6 sm:gap-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full  justify-center sm:p-6">
         <div className="flex flex-col gap-2 ">
           <div className="flex flex-col gap-2 items-center justify-center sm:items-start sm:ustify-start">
             <img src={logo2} alt="" />
@@ -192,7 +192,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2 w-full justify-center items-center">
+      <div className="max-w-7xl flex flex-col gap-2 w-full justify-center items-center">
         <h1 className="text-[#FFA800] text-[14px] sm:text-[18px] md:text-[24px] font-[500] leading-6 text-center">
           Global accreditations & recognitions
         </h1>

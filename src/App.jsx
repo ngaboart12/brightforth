@@ -19,6 +19,12 @@ import StudyInChina from "./pages/StudyInChina";
 import SpecialOffers from "./pages/SpecialOffers";
 import Toefl from "./pages/Toefl";
 import Sop from "./pages/Sop";
+import Special from "./pages/Special";
+import Ielts from "./pages/Ielts";
+import CareerCounseling from "./pages/CareerCounseling";
+import PreDeparture from "./pages/PreDeparture";
+import CareerCounseling2 from "./pages/CareerCounseling2";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,11 +33,17 @@ function App() {
     <div className=" w-full overflow-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/notfound" element={<NotFound />} />
         <Route path="/Aboutus" element={<Aboutus />} />
         <Route path="/poland" element={<StudyInPoland />} />
         <Route path="/specialoffer" element={<SpecialOffers />} />
+        <Route path="/special" element={<Special />} />
+        <Route path="/ielts" element={<Ielts />} />
         <Route path="/toefl" element={<Toefl />} />
         <Route path="/sop" element={<Sop />} />
+        <Route path="/careerCounseling" element={<CareerCounseling />} />
+        <Route path="/careerCounseling2" element={<CareerCounseling2 />} />
+        <Route path="/predeparture" element={<PreDeparture />} />
         <Route path="/canada" element={<StudyInCanada />} />
         <Route path="/china" element={<StudyInChina />} />
         <Route path="/app" element={<Apllication />} />

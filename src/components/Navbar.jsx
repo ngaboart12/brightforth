@@ -101,10 +101,10 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="/">EVENTS</a>
+            <a href="/notfound">EVENTS</a>
           </li>
           <li>
-            <a href="/">FAQ</a>
+            <a href="/notfound">FAQ</a>
           </li>
         </ul>
         <div>
