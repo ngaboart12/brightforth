@@ -10,7 +10,7 @@ const Navbar2 = () => {
       </div>
 
       <div className="links flex gap-[102px] items-center mt-2">
-        <ul className="hidden md:flex text-white font-[300] text-[12px]  gap-4  items-center">
+        <ul className=" hi md:flex text-white font-[300] text-[12px]  gap-4  items-center">
           <li>
             <a href="/">HOME</a>
           </li>
@@ -18,7 +18,7 @@ const Navbar2 = () => {
             <a href="/aboutus">ABOUT US</a>
           </li>
           <li>
-            <a href="/" className=" flex gap-1 items-center">
+            <p className=" cursor-pointer flex gap-1 items-center">
               <span>TEST COACHING</span>{" "}
               <span className="icon">
                 <svg
@@ -34,23 +34,27 @@ const Navbar2 = () => {
                   />
                 </svg>
               </span>
-            </a>
-            <ul className="text-[black] gap-4 text-[16px]">
+            </p>
+            <ul className="text-[black] font-[300] gap-4 text-[16px] bg-black">
               <li>
-                <a href="" className="hover:text-black/70">
-                  heee
+                <a href="/toefl" className="hover:text-black/70">
+                  TOEFL
                 </a>
               </li>
               <li>
-                <a href="">heee</a>
+                <a href="/ielts" className="hover:text-black/70">
+                  IELTS
+                </a>
               </li>
               <li>
-                <a href="">heee</a>
+                <a href="/duolingo" className="hover:text-black/70">
+                  DUOLINGO
+                </a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="/" className=" flex gap-1 items-center">
+            <p href="/" className=" flex gap-1 items-center">
               <span>COUNTRIES</span>{" "}
               <span className="icon">
                 <svg
@@ -66,8 +70,8 @@ const Navbar2 = () => {
                   />
                 </svg>
               </span>
-            </a>
-            <ul className="text-[black] gap-4 text-[16px]">
+            </p>
+            <ul className="text-[black] font-[300] gap-4 text-[16px] bg-black">
               <li>
                 <a href="/canada" className="hover:text-black/70">
                   Canada
@@ -82,7 +86,7 @@ const Navbar2 = () => {
             </ul>
           </li>
           <li>
-            <a href="/" className=" flex gap-1 items-center">
+            <p href="/" className=" flex gap-1 items-center">
               <span>SERVICES</span>{" "}
               <span className="icon">
                 <svg
@@ -98,7 +102,17 @@ const Navbar2 = () => {
                   />
                 </svg>
               </span>
-            </a>
+            </p>
+            <ul className="text-[black] font-[300] gap-4 text-[16px] bg-black">
+              <li>
+                <a href="/careerCounseling" className="hover:text-black/70">
+                  CAREER COUNSELING
+                </a>
+              </li>
+              <li>
+                <a href="/careerCounseling2"> CAREER COUNSELING 2</a>
+              </li>
+            </ul>
           </li>
           <li>
             <a href="/notfound">EVENTS</a>

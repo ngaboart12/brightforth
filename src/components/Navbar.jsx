@@ -18,7 +18,7 @@ const Navbar = () => {
             <a href="/aboutus">ABOUT US</a>
           </li>
           <li>
-            <a href="/" className=" flex gap-1 items-center">
+            <p className=" cursor-pointer flex gap-1 items-center">
               <span>TEST COACHING</span>{" "}
               <span className="icon">
                 <svg
@@ -34,23 +34,27 @@ const Navbar = () => {
                   />
                 </svg>
               </span>
-            </a>
-            <ul className="text-[black] gap-4 text-[16px] bg-black">
+            </p>
+            <ul className="text-[black] font-[300] gap-4 text-[16px] bg-black">
               <li>
-                <a href="" className="hover:text-black/70">
-                  heee
+                <a href="/toefl" className="hover:text-black/70">
+                  TOEFL
                 </a>
               </li>
               <li>
-                <a href="">heee</a>
+                <a href="/ielts" className="hover:text-black/70">
+                  IELTS
+                </a>
               </li>
               <li>
-                <a href="">heee</a>
+                <a href="/duolingo" className="hover:text-black/70">
+                  DUOLINGO
+                </a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="/" className=" flex gap-1 items-center">
+            <p className=" cursor-pointer flex gap-1 items-center">
               <span>COUNTRIES</span>{" "}
               <span className="icon">
                 <svg
@@ -62,12 +66,12 @@ const Navbar = () => {
                 >
                   <path
                     d="M3.72456 6.64143C3.94645 6.41954 4.29367 6.39937 4.53835 6.58092L4.60845 6.64143L9.99984 12.0325L15.3912 6.64143C15.6131 6.41954 15.9603 6.39937 16.205 6.58092L16.2751 6.64143C16.497 6.86332 16.5172 7.21054 16.3356 7.45522L16.2751 7.52532L10.4418 13.3586C10.2199 13.5805 9.87267 13.6007 9.62799 13.4192L9.5579 13.3586L3.72456 7.52532C3.48048 7.28124 3.48048 6.88551 3.72456 6.64143Z"
-                    fill="white"
+                    fill="black"
                   />
                 </svg>
               </span>
-            </a>
-            <ul className="text-[black] gap-4 text-[16px]">
+            </p>
+            <ul className="text-[black] font-[300] gap-4 text-[16px] bg-black">
               <li>
                 <a href="/canada" className="hover:text-black/70">
                   Canada
@@ -82,7 +86,7 @@ const Navbar = () => {
             </ul>
           </li>
           <li>
-            <a href="/" className=" flex gap-1 items-center">
+            <p className=" cursor-pointer flex gap-1 items-center">
               <span>SERVICES</span>{" "}
               <span className="icon">
                 <svg
@@ -94,14 +98,24 @@ const Navbar = () => {
                 >
                   <path
                     d="M3.72456 6.64143C3.94645 6.41954 4.29367 6.39937 4.53835 6.58092L4.60845 6.64143L9.99984 12.0325L15.3912 6.64143C15.6131 6.41954 15.9603 6.39937 16.205 6.58092L16.2751 6.64143C16.497 6.86332 16.5172 7.21054 16.3356 7.45522L16.2751 7.52532L10.4418 13.3586C10.2199 13.5805 9.87267 13.6007 9.62799 13.4192L9.5579 13.3586L3.72456 7.52532C3.48048 7.28124 3.48048 6.88551 3.72456 6.64143Z"
-                    fill="white"
+                    fill="black"
                   />
                 </svg>
               </span>
-            </a>
+            </p>
+            <ul className="text-[black] font-[300] gap-4 text-[16px] bg-black">
+              <li>
+                <a href="/careerCounseling" className="hover:text-black/70">
+                  CAREER COUNSELING
+                </a>
+              </li>
+              <li>
+                <a href="/careerCounseling2"> CAREER COUNSELING 2</a>
+              </li>
+            </ul>
           </li>
           <li>
-            <a href="/notfound">EVENTS</a>
+            <a href="/gallery">EVENTS</a>
           </li>
           <li>
             <a href="/notfound">FAQ</a>

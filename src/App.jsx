@@ -25,6 +25,7 @@ import CareerCounseling from "./pages/CareerCounseling";
 import PreDeparture from "./pages/PreDeparture";
 import CareerCounseling2 from "./pages/CareerCounseling2";
 import NotFound from "./pages/NotFound";
+import Duolingo from "./pages/Duolingo";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -43,6 +44,7 @@ function App() {
         <Route path="/sop" element={<Sop />} />
         <Route path="/careerCounseling" element={<CareerCounseling />} />
         <Route path="/careerCounseling2" element={<CareerCounseling2 />} />
+        <Route path="/duolingo" element={<Duolingo />} />
         <Route path="/predeparture" element={<PreDeparture />} />
         <Route path="/canada" element={<StudyInCanada />} />
         <Route path="/china" element={<StudyInChina />} />
