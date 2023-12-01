@@ -180,13 +180,13 @@ const Footer = () => {
             </button>
           </form>
           <div className="flex flex-col gap-3 py-4">
-            <a href="#" className="text-[#346FAF] text-[18px] font-[300]">
+            <a href="#" className="text-[#346FAF] text-[16px] font-[300]">
               SEARCH UNIVERSITIES
             </a>
-            <a href="#" className="text-[#346FAF] text-[18px] font-[300]">
+            <a href="#" className="text-[#346FAF] text-[16px] font-[300]">
               BOOK ONLINE COUNSELLIG
             </a>
-            <a href="#" className="text-[#346FAF] text-[18px] font-[300]">
+            <a href="#" className="text-[#346FAF] text-[16px] font-[300]">
               UPCOMING EVENTS
             </a>
           </div>
@@ -204,7 +204,7 @@ const Footer = () => {
           <img src={dp5} alt="" className="w-10" />
         </div>
       </div>
-      <div className="py-2 border-t-2 border-[#07305C]/70 items-center justify-center flex ">
+      <div className="py-2 border-t-2 w-full border-[#07305C]/70 items-center justify-center flex ">
         <span className="text-white text-[14px] font-[300] text-center">
           @ 2023 BrightForth. All rights reserved.
         </span>

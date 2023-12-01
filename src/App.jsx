@@ -26,6 +26,8 @@ import PreDeparture from "./pages/PreDeparture";
 import CareerCounseling2 from "./pages/CareerCounseling2";
 import NotFound from "./pages/NotFound";
 import Duolingo from "./pages/Duolingo";
+import OffersDetails from "./pages/OffersDetails";
+import FAQ from "./pages/FAQ";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -50,7 +52,8 @@ function App() {
         <Route path="/china" element={<StudyInChina />} />
         <Route path="/app" element={<Apllication />} />
         <Route path="/ass" element={<Assessment />} />
-
+        <Route path="/offerDetails" element={<OffersDetails />} />
+        <Route path="/FAQ" element={<FAQ />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/event/:eventId" element={<EventDetailsPage />} />
       </Routes>

@@ -10,7 +10,7 @@ const Navbar2 = () => {
       </div>
 
       <div className="links flex gap-[102px] items-center mt-2">
-        <ul className=" hi md:flex text-white font-[300] text-[12px]  gap-4  items-center">
+        <ul className=" hidden md:flex text-white font-[300] text-[12px]  gap-4  items-center">
           <li>
             <a href="/">HOME</a>
           </li>
@@ -118,7 +118,7 @@ const Navbar2 = () => {
             <a href="/notfound">EVENTS</a>
           </li>
           <li>
-            <a href="/notfound">FAQ</a>
+            <a href="/FAQ">FAQ</a>
           </li>
         </ul>
         <div>
